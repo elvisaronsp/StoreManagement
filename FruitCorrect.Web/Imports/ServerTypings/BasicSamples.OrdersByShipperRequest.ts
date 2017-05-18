@@ -1,0 +1,5 @@
+﻿namespace FruitCorrect.BasicSamples {
+    export interface OrdersByShipperRequest extends Serenity.ServiceRequest {
+    }
+}
+

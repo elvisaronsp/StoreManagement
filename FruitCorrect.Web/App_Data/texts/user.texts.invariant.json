@@ -1,0 +1,20 @@
+{
+  "Db.BasicSamples.GrossSales.ProductId": "ИД",
+  "Db.BasicSamples.GrossSales.ProductName": "Име на продукт",
+  "Db.Northwind.OrderDetail.ProductDiscontinued": "Продукта е спрян",
+  "Db.Northwind.OrderDetail.ProductID": "Продукт",
+  "Db.Northwind.OrderDetail.ProductName": "Име на продукт",
+  "Db.Northwind.OrderDetail.ProductQuantityPerUnit": "Мярка за брой",
+  "Db.Northwind.OrderDetail.ProductSupplierID": "Доставчик",
+  "Db.Northwind.OrderDetail.ProductUnitPrice": "Цена за брой",
+  "Db.Northwind.Product.CategoryDescription": "Описание на категория",
+  "Db.Northwind.Product.CategoryID": "Категория",
+  "Db.Northwind.Product.CategoryName": "Категория",
+  "Db.Northwind.Product.CategoryPicture": "Картина на категорията",
+  "Db.Northwind.Product.Discontinued": "Спрян",
+  "Db.Northwind.Product.EntityPlural": "Продукти",
+  "Db.Northwind.Product.EntitySingular": "Продукт",
+  "Db.Northwind.Product.ProductID": "ИД",
+  "Db.Northwind.Product.ProductImage": "Картина на продукт",
+  "Db.Northwind.Product.ProductName": "Име на продукт"
+}

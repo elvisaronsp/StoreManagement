@@ -1,0 +1,11 @@
+﻿{
+  "RootNamespace": "FruitCorrect",
+  "ServerTypings": {
+    "Assemblies": [
+      "bin/Debug/netcoreapp1.1/FruitCorrect.Web.dll"
+    ]
+  },
+  "Connections": [],
+  "BaseRowClasses": [],
+  "RemoveForeignFields": []
+}
