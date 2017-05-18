@@ -6,10 +6,10 @@
     [PageAuthorize(typeof(Entities.EmployeeRow))]
     public class EmployeeController : Controller
     {
-        [Route("Northwind/Customer")]
+        [Route("Northwind/Employee")]
         public ActionResult Index()
         {
-            return View(MVC.Views.Northwind.Customer.CustomerIndex);
+            return View(MVC.Views.Northwind.Employee.EmployeeIndex);
         }
     }
 }
