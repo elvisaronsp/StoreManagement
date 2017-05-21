@@ -39,20 +39,7 @@ namespace FruitCorrect.Northwind.Entities
             get { return Fields.EmployeeFirstName[this]; }
             set { Fields.EmployeeFirstName[this] = value; }
         }
-
-        [DisplayName("Employee Title"), Expression("jEmployee.[Title]")]
-        public String EmployeeTitle
-        {
-            get { return Fields.EmployeeTitle[this]; }
-            set { Fields.EmployeeTitle[this] = value; }
-        }
-
-        [DisplayName("Employee Title Of Courtesy"), Expression("jEmployee.TitleOfCourtesy")]
-        public String EmployeeTitleOfCourtesy
-        {
-            get { return Fields.EmployeeTitleOfCourtesy[this]; }
-            set { Fields.EmployeeTitleOfCourtesy[this] = value; }
-        }
+        
 
         [DisplayName("Employee Birth Date"), Expression("jEmployee.[BirthDate]")]
         public DateTime? EmployeeBirthDate
@@ -82,19 +69,7 @@ namespace FruitCorrect.Northwind.Entities
             set { Fields.EmployeeCity[this] = value; }
         }
 
-        [DisplayName("Employee Region"), Expression("jEmployee.[Region]")]
-        public String EmployeeRegion
-        {
-            get { return Fields.EmployeeRegion[this]; }
-            set { Fields.EmployeeRegion[this] = value; }
-        }
 
-        [DisplayName("Employee Postal Code"), Expression("jEmployee.[PostalCode]")]
-        public String EmployeePostalCode
-        {
-            get { return Fields.EmployeePostalCode[this]; }
-            set { Fields.EmployeePostalCode[this] = value; }
-        }
 
         [DisplayName("Employee Country"), Expression("jEmployee.[Country]")]
         public String EmployeeCountry
@@ -103,20 +78,7 @@ namespace FruitCorrect.Northwind.Entities
             set { Fields.EmployeeCountry[this] = value; }
         }
 
-        [DisplayName("Employee Home Phone"), Expression("jEmployee.[HomePhone]")]
-        public String EmployeeHomePhone
-        {
-            get { return Fields.EmployeeHomePhone[this]; }
-            set { Fields.EmployeeHomePhone[this] = value; }
-        }
-
-        [DisplayName("Employee Extension"), Expression("jEmployee.[Extension]")]
-        public String EmployeeExtension
-        {
-            get { return Fields.EmployeeExtension[this]; }
-            set { Fields.EmployeeExtension[this] = value; }
-        }
-
+    
         [DisplayName("Employee Photo"), Expression("jEmployee.[Photo]")]
         public Stream EmployeePhoto
         {
@@ -130,13 +92,7 @@ namespace FruitCorrect.Northwind.Entities
             get { return Fields.EmployeeNotes[this]; }
             set { Fields.EmployeeNotes[this] = value; }
         }
-
-        [DisplayName("Employee Reports To"), Expression("jEmployee.[ReportsTo]")]
-        public Int32? EmployeeReportsTo
-        {
-            get { return Fields.EmployeeReportsTo[this]; }
-            set { Fields.EmployeeReportsTo[this] = value; }
-        }
+        
 
         [DisplayName("Employee Photo Path"), Expression("jEmployee.[PhotoPath]")]
         public String EmployeePhotoPath
@@ -183,20 +139,13 @@ namespace FruitCorrect.Northwind.Entities
 
             public StringField EmployeeLastName;
             public StringField EmployeeFirstName;
-            public StringField EmployeeTitle;
-            public StringField EmployeeTitleOfCourtesy;
             public DateTimeField EmployeeBirthDate;
             public DateTimeField EmployeeHireDate;
             public StringField EmployeeAddress;
             public StringField EmployeeCity;
-            public StringField EmployeeRegion;
-            public StringField EmployeePostalCode;
             public StringField EmployeeCountry;
-            public StringField EmployeeHomePhone;
-            public StringField EmployeeExtension;
             public StreamField EmployeePhoto;
             public StringField EmployeeNotes;
-            public Int32Field EmployeeReportsTo;
             public StringField EmployeePhotoPath;
 
 

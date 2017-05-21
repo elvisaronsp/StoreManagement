@@ -1,4 +1,6 @@
 ﻿
+using FruitCorrect.Organization;
+
 namespace FruitCorrect.Northwind.Entities
 {
     using Serenity.ComponentModel;
@@ -35,6 +37,21 @@ namespace FruitCorrect.Northwind.Entities
             get { return Fields.Description[this]; }
             set { Fields.Description[this] = value; }
         }
+        [DisplayName("Parent Category"), ForeignKey("Categories", "CategoryID"), LeftJoin("jParentCategory"), TextualField("ParentCategoryName")]
+        [LookupInclude, CategoryEditor]
+        public Int32? ParentCategoryID
+        {
+            get { return Fields.ParentCategoryID[this]; }
+            set { Fields.ParentCategoryID[this] = value; }
+        }
+
+        [DisplayName("Parent Category Name"), Expression("jParentCategory.[CategoryName]")]
+        public String ParentCategoryName
+        {
+            get { return Fields.ParentCategoryName[this]; }
+            set { Fields.ParentCategoryName[this] = value; }
+        }
+
 
         [DisplayName("Picture")]
         public Stream Picture
@@ -65,8 +82,10 @@ namespace FruitCorrect.Northwind.Entities
             public Int32Field CategoryID;
             public StringField CategoryName;
             public StringField Description;
+            public Int32Field ParentCategoryID;
             public StreamField Picture;
 
+            public StringField ParentCategoryName;
             public RowFields()
             {
                 LocalTextPrefix = "Northwind.Category";

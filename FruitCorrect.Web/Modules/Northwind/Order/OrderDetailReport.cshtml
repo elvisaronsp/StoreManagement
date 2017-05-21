@@ -10,7 +10,7 @@
         <div class="col-xs-12">
             <h2 class="page-header">
                 Invoice
-                <small class="pull-right">Date: @DateTime.Now.ToShortDateString()</small>
+                <small class="pull-right">Date: @DateTime.Now</small>
             </h2>
         </div>
     </div>
@@ -41,7 +41,7 @@
             <b>Invoice #IX@(Model.Order.OrderID)</b><br>
             <br>
             <b>Order ID:</b> @Model.Order.OrderID<br>
-            <b>Payment Due:</b> @Model.Order.OrderDate.Value.ToShortDateString()<br>
+            <b>Payment Due:</b> @Model.Order.OrderDate.Value<br>
         </div>
         <!-- /.col -->
     </div>
@@ -82,7 +82,7 @@
         </div>
         <!-- /.col -->
         <div class="col-xs-6">
-            <p class="lead">Amount Due @(Model.Order.OrderDate.Value.AddDays(10).ToShortDateString())</p>
+            <p class="lead">Amount Due @(Model.Order.OrderDate.Value.AddDays(10))</p>
 
             @{
                 var subTotal = Model.Details.Sum(x => x.LineTotal ?? 0);

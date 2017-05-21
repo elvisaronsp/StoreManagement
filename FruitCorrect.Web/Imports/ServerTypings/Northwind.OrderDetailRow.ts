@@ -5,6 +5,7 @@
         ProductID?: number;
         UnitPrice?: number;
         Quantity?: number;
+        PhisicalQuantity?: number;
         Discount?: number;
         OrderCustomerID?: string;
         OrderEmployeeID?: number;
@@ -31,6 +32,7 @@
             export declare const ProductID: string;
             export declare const UnitPrice: string;
             export declare const Quantity: string;
+            export declare const PhisicalQuantity: string;
             export declare const Discount: string;
             export declare const OrderCustomerID: string;
             export declare const OrderEmployeeID: string;
@@ -47,7 +49,6 @@
             export declare const LineTotal: string;
         }
 
-        ['DetailID', 'OrderID', 'ProductID', 'UnitPrice', 'Quantity', 'Discount', 'OrderCustomerID', 'OrderEmployeeID', 'OrderDate', 'OrderShippedDate', 'OrderShipVia', 'OrderShipCity', 'OrderShipCountry', 'ProductName', 'ProductDiscontinued', 'ProductSupplierID', 'ProductQuantityPerUnit', 'ProductUnitPrice', 'LineTotal'].forEach(x => (<any>Fields)[x] = x);
+        ['DetailID', 'OrderID', 'ProductID', 'UnitPrice', 'Quantity', 'PhisicalQuantity', 'Discount', 'OrderCustomerID', 'OrderEmployeeID', 'OrderDate', 'OrderShippedDate', 'OrderShipVia', 'OrderShipCity', 'OrderShipCountry', 'ProductName', 'ProductDiscontinued', 'ProductSupplierID', 'ProductQuantityPerUnit', 'ProductUnitPrice', 'LineTotal'].forEach(x => (<any>Fields)[x] = x);
     }
 }
-

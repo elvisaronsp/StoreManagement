@@ -15,8 +15,6 @@
         ShipPostalCode?: string;
         ShipCountry?: string;
         CustomerCompanyName?: string;
-        CustomerContactName?: string;
-        CustomerContactTitle?: string;
         CustomerCity?: string;
         CustomerRegion?: string;
         CustomerCountry?: string;
@@ -24,7 +22,6 @@
         CustomerFax?: string;
         EmployeeFullName?: string;
         EmployeeGender?: Gender;
-        EmployeeReportsToFullName?: string;
         ShipViaCompanyName?: string;
         ShipViaPhone?: string;
         ShippingState?: OrderShippingState;
@@ -57,8 +54,6 @@
             export declare const ShipPostalCode: string;
             export declare const ShipCountry: string;
             export declare const CustomerCompanyName: string;
-            export declare const CustomerContactName: string;
-            export declare const CustomerContactTitle: string;
             export declare const CustomerCity: string;
             export declare const CustomerRegion: string;
             export declare const CustomerCountry: string;
@@ -66,13 +61,12 @@
             export declare const CustomerFax: string;
             export declare const EmployeeFullName: string;
             export declare const EmployeeGender: string;
-            export declare const EmployeeReportsToFullName: string;
             export declare const ShipViaCompanyName: string;
             export declare const ShipViaPhone: string;
             export declare const ShippingState: string;
             export declare const DetailList: string;
         }
 
-        ['OrderID', 'CustomerID', 'EmployeeID', 'OrderDate', 'RequiredDate', 'ShippedDate', 'ShipVia', 'Freight', 'ShipName', 'ShipAddress', 'ShipCity', 'ShipRegion', 'ShipPostalCode', 'ShipCountry', 'CustomerCompanyName', 'CustomerContactName', 'CustomerContactTitle', 'CustomerCity', 'CustomerRegion', 'CustomerCountry', 'CustomerPhone', 'CustomerFax', 'EmployeeFullName', 'EmployeeGender', 'EmployeeReportsToFullName', 'ShipViaCompanyName', 'ShipViaPhone', 'ShippingState', 'DetailList'].forEach(x => (<any>Fields)[x] = x);
+        ['OrderID', 'CustomerID', 'EmployeeID', 'OrderDate', 'RequiredDate', 'ShippedDate', 'ShipVia', 'Freight', 'ShipName', 'ShipAddress', 'ShipCity', 'ShipRegion', 'ShipPostalCode', 'ShipCountry', 'CustomerCompanyName', 'CustomerCity', 'CustomerRegion', 'CustomerCountry', 'CustomerPhone', 'CustomerFax', 'EmployeeFullName', 'EmployeeGender', 'ShipViaCompanyName', 'ShipViaPhone', 'ShippingState', 'DetailList'].forEach(x => (<any>Fields)[x] = x);
     }
 }

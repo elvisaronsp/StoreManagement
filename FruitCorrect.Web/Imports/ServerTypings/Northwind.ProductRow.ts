@@ -11,6 +11,7 @@
         UnitsInStock?: number;
         UnitsOnOrder?: number;
         ReorderLevel?: number;
+        ExpirationDate?: string;
         SupplierCompanyName?: string;
         SupplierContactName?: string;
         SupplierContactTitle?: string;
@@ -49,6 +50,7 @@
             export declare const UnitsInStock: string;
             export declare const UnitsOnOrder: string;
             export declare const ReorderLevel: string;
+            export declare const ExpirationDate: string;
             export declare const SupplierCompanyName: string;
             export declare const SupplierContactName: string;
             export declare const SupplierContactTitle: string;
@@ -65,7 +67,6 @@
             export declare const CategoryPicture: string;
         }
 
-        ['ProductID', 'ProductName', 'ProductImage', 'Discontinued', 'SupplierID', 'CategoryID', 'QuantityPerUnit', 'UnitPrice', 'UnitsInStock', 'UnitsOnOrder', 'ReorderLevel', 'SupplierCompanyName', 'SupplierContactName', 'SupplierContactTitle', 'SupplierAddress', 'SupplierCity', 'SupplierRegion', 'SupplierPostalCode', 'SupplierCountry', 'SupplierPhone', 'SupplierFax', 'SupplierHomePage', 'CategoryName', 'CategoryDescription', 'CategoryPicture'].forEach(x => (<any>Fields)[x] = x);
+        ['ProductID', 'ProductName', 'ProductImage', 'Discontinued', 'SupplierID', 'CategoryID', 'QuantityPerUnit', 'UnitPrice', 'UnitsInStock', 'UnitsOnOrder', 'ReorderLevel', 'ExpirationDate', 'SupplierCompanyName', 'SupplierContactName', 'SupplierContactTitle', 'SupplierAddress', 'SupplierCity', 'SupplierRegion', 'SupplierPostalCode', 'SupplierCountry', 'SupplierPhone', 'SupplierFax', 'SupplierHomePage', 'CategoryName', 'CategoryDescription', 'CategoryPicture'].forEach(x => (<any>Fields)[x] = x);
     }
 }
-

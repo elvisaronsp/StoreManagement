@@ -1,6 +1,12 @@
 {
   "Db.BasicSamples.GrossSales.ProductId": "ИД",
   "Db.BasicSamples.GrossSales.ProductName": "Име на продукт",
+  "Db.CustomerRepresentatives.EntityPlural": "Представители",
+  "Db.CustomerRepresentatives.EntitySingular": "Представители",
+  "Db.Northwind.Customer.Representatives.EntityPlural": "Представители",
+  "Db.Northwind.Customer.Representatives.EntitySingular": "Представител",
+  "Db.Northwind.CustomerRepresentatives.EntityPlural": "Представители",
+  "Db.Northwind.CustomerRepresentatives.EntitySingular": "Представител",
   "Db.Northwind.OrderDetail.ProductDiscontinued": "Продукта е спрян",
   "Db.Northwind.OrderDetail.ProductID": "Продукт",
   "Db.Northwind.OrderDetail.ProductName": "Име на продукт",

@@ -48,6 +48,13 @@ namespace FruitCorrect.Northwind.Entities
             set { Fields.Quantity[this] = value; }
         }
 
+        [DisplayName("Phisical Quantity"), NotNull, DefaultValue(1), AlignRight]
+        public Int16? PhisicalQuantity
+        {
+            get { return Fields.PhisicalQuantity[this]; }
+            set { Fields.PhisicalQuantity[this] = value; }
+        }
+
         [DisplayName("Discount"), NotNull, DefaultValue(0), AlignRight, DisplayFormat("#,##0.00")]
         public Single? Discount
         {
@@ -166,6 +173,7 @@ namespace FruitCorrect.Northwind.Entities
             public Int32Field ProductID;
             public DecimalField UnitPrice;
             public Int16Field Quantity;
+            public Int16Field PhisicalQuantity;
             public SingleField Discount;
 
             public StringField OrderCustomerID;

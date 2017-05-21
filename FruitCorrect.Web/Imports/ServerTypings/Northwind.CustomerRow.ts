@@ -3,8 +3,6 @@
         ID?: number;
         CustomerID?: string;
         CompanyName?: string;
-        ContactName?: string;
-        ContactTitle?: string;
         Address?: string;
         City?: string;
         Region?: string;
@@ -14,10 +12,11 @@
         Fax?: string;
         NoteList?: NoteRow[];
         Representatives?: number[];
-        LastContactDate?: string;
-        LastContactedBy?: number;
         Email?: string;
         SendBulletin?: boolean;
+        BulstatEIK?: string;
+        DdsNumber?: string;
+        BankAccount?: string;
     }
 
     export namespace CustomerRow {
@@ -34,8 +33,6 @@
             export declare const ID: string;
             export declare const CustomerID: string;
             export declare const CompanyName: string;
-            export declare const ContactName: string;
-            export declare const ContactTitle: string;
             export declare const Address: string;
             export declare const City: string;
             export declare const Region: string;
@@ -45,12 +42,13 @@
             export declare const Fax: string;
             export declare const NoteList: string;
             export declare const Representatives: string;
-            export declare const LastContactDate: string;
-            export declare const LastContactedBy: string;
             export declare const Email: string;
             export declare const SendBulletin: string;
+            export declare const BulstatEIK: string;
+            export declare const DdsNumber: string;
+            export declare const BankAccount: string;
         }
 
-        ['ID', 'CustomerID', 'CompanyName', 'ContactName', 'ContactTitle', 'Address', 'City', 'Region', 'PostalCode', 'Country', 'Phone', 'Fax', 'NoteList', 'Representatives', 'LastContactDate', 'LastContactedBy', 'Email', 'SendBulletin'].forEach(x => (<any>Fields)[x] = x);
+        ['ID', 'CustomerID', 'CompanyName', 'Address', 'City', 'Region', 'PostalCode', 'Country', 'Phone', 'Fax', 'NoteList', 'Representatives', 'Email', 'SendBulletin', 'BulstatEIK', 'DdsNumber', 'BankAccount'].forEach(x => (<any>Fields)[x] = x);
     }
 }

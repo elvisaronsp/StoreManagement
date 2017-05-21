@@ -13,9 +13,8 @@ namespace FruitCorrect.Northwind.Forms
         [Category("General")]
         public String CustomerID { get; set; }
         public String CompanyName { get; set; }
-        [Category("Contact")]
-        public String ContactName { get; set; }
-        public String ContactTitle { get; set; }
+
+        [Category("Representatives")]
         public List<Int32> Representatives { get; set; }
 
         [Category("Address")]
@@ -30,8 +29,11 @@ namespace FruitCorrect.Northwind.Forms
 
         // note: these fields are stored in an extension table (CustomerDetails)
         [Category("Details")]
-        public DateTime? LastContactDate { get; set; }
-        public Int32? LastContactedBy { get; set; }
+
+        public String BulstatEIK { get; set; }
+        public String DdsNumber { get; set; }
+        public String BankAccount { get; set; }
+
         public String Email { get; set; }
         public Boolean? SendBulletin { get; set; }
     }

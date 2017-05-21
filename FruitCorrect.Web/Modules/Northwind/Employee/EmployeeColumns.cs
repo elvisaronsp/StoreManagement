@@ -11,6 +11,11 @@ namespace FruitCorrect.Northwind.Forms
     {
         [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
         public Int32 EmployeeID { get; set; }
-        
+        public String FullName { get; set; }
+        public Int32 Gender { get; set; }
+        public String Address { get; set; }
+        public String HomePhone { get; set; }
+
+
     }
 }

@@ -7,8 +7,8 @@
     export interface CategoryForm {
         CategoryName: Serenity.StringEditor;
         Description: Serenity.StringEditor;
+        ParentCategoryId: Organization.BusinessUnitEditor;
     }
 
-    [['CategoryName', () => Serenity.StringEditor], ['Description', () => Serenity.StringEditor]].forEach(x => Object.defineProperty(CategoryForm.prototype, <string>x[0], { get: function () { return this.w(x[0], (x[1] as any)()); }, enumerable: true, configurable: true }));
+    [['CategoryName', () => Serenity.StringEditor], ['Description', () => Serenity.StringEditor], ['ParentCategoryId', () => Organization.BusinessUnitEditor]].forEach(x => Object.defineProperty(CategoryForm.prototype, <string>x[0], { get: function () { return this.w(x[0], (x[1] as any)()); }, enumerable: true, configurable: true }));
 }
-

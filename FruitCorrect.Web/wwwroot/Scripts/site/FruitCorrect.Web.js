@@ -892,7 +892,7 @@ var FruitCorrect;
         }(Serenity.PrefixedContext));
         CategoryForm.formKey = 'Northwind.Category';
         Northwind.CategoryForm = CategoryForm;
-        [['CategoryName', function () { return Serenity.StringEditor; }], ['Description', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(CategoryForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+        [['CategoryName', function () { return Serenity.StringEditor; }], ['Description', function () { return Serenity.StringEditor; }], ['ParentCategoryId', function () { return FruitCorrect.Organization.BusinessUnitEditor; }]].forEach(function (x) { return Object.defineProperty(CategoryForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(Northwind = FruitCorrect.Northwind || (FruitCorrect.Northwind = {}));
 })(FruitCorrect || (FruitCorrect = {}));
 var FruitCorrect;
@@ -945,7 +945,7 @@ var FruitCorrect;
             var Fields;
             (function (Fields) {
             })(Fields = CategoryRow.Fields || (CategoryRow.Fields = {}));
-            ['CategoryID', 'CategoryName', 'Description', 'Picture'].forEach(function (x) { return Fields[x] = x; });
+            ['CategoryID', 'CategoryName', 'Description', 'ParentCategoryID', 'Picture', 'ParentCategoryName'].forEach(function (x) { return Fields[x] = x; });
         })(CategoryRow = Northwind.CategoryRow || (Northwind.CategoryRow = {}));
     })(Northwind = FruitCorrect.Northwind || (FruitCorrect.Northwind = {}));
 })(FruitCorrect || (FruitCorrect = {}));
@@ -1010,7 +1010,7 @@ var FruitCorrect;
             var Fields;
             (function (Fields) {
             })(Fields = CustomerDetailsRow.Fields || (CustomerDetailsRow.Fields = {}));
-            ['Id', 'LastContactDate', 'LastContactedBy', 'Email', 'SendBulletin', 'LastContactedByLastName', 'LastContactedByFirstName', 'LastContactedByTitle', 'LastContactedByTitleOfCourtesy', 'LastContactedByBirthDate', 'LastContactedByHireDate', 'LastContactedByAddress', 'LastContactedByCity', 'LastContactedByRegion', 'LastContactedByPostalCode', 'LastContactedByCountry', 'LastContactedByHomePhone', 'LastContactedByExtension', 'LastContactedByPhoto', 'LastContactedByNotes', 'LastContactedByReportsTo', 'LastContactedByPhotoPath'].forEach(function (x) { return Fields[x] = x; });
+            ['Id', 'Email', 'BulstatEIK', 'DdsNumber', 'BankAccount', 'SendBulletin'].forEach(function (x) { return Fields[x] = x; });
         })(CustomerDetailsRow = Northwind.CustomerDetailsRow || (Northwind.CustomerDetailsRow = {}));
     })(Northwind = FruitCorrect.Northwind || (FruitCorrect.Northwind = {}));
 })(FruitCorrect || (FruitCorrect = {}));
@@ -1027,7 +1027,7 @@ var FruitCorrect;
         }(Serenity.PrefixedContext));
         CustomerForm.formKey = 'Northwind.Customer';
         Northwind.CustomerForm = CustomerForm;
-        [['CustomerID', function () { return Serenity.StringEditor; }], ['CompanyName', function () { return Serenity.StringEditor; }], ['ContactName', function () { return Serenity.StringEditor; }], ['ContactTitle', function () { return Serenity.StringEditor; }], ['Representatives', function () { return Serenity.LookupEditor; }], ['Address', function () { return Serenity.StringEditor; }], ['City', function () { return Serenity.StringEditor; }], ['Region', function () { return Serenity.StringEditor; }], ['PostalCode', function () { return Serenity.StringEditor; }], ['Country', function () { return Serenity.StringEditor; }], ['Phone', function () { return Serenity.StringEditor; }], ['Fax', function () { return Serenity.StringEditor; }], ['NoteList', function () { return Northwind.NotesEditor; }], ['LastContactDate', function () { return Serenity.DateEditor; }], ['LastContactedBy', function () { return Serenity.LookupEditor; }], ['Email', function () { return Serenity.EmailEditor; }], ['SendBulletin', function () { return Serenity.BooleanEditor; }]].forEach(function (x) { return Object.defineProperty(CustomerForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+        [['CustomerID', function () { return Serenity.StringEditor; }], ['CompanyName', function () { return Serenity.StringEditor; }], ['Representatives', function () { return Serenity.LookupEditor; }], ['Address', function () { return Serenity.StringEditor; }], ['City', function () { return Serenity.StringEditor; }], ['Region', function () { return Serenity.StringEditor; }], ['PostalCode', function () { return Serenity.StringEditor; }], ['Country', function () { return Serenity.StringEditor; }], ['Phone', function () { return Serenity.StringEditor; }], ['Fax', function () { return Serenity.StringEditor; }], ['NoteList', function () { return Northwind.NotesEditor; }], ['BulstatEIK', function () { return Serenity.StringEditor; }], ['DdsNumber', function () { return Serenity.StringEditor; }], ['BankAccount', function () { return Serenity.StringEditor; }], ['Email', function () { return Serenity.EmailEditor; }], ['SendBulletin', function () { return Serenity.BooleanEditor; }]].forEach(function (x) { return Object.defineProperty(CustomerForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(Northwind = FruitCorrect.Northwind || (FruitCorrect.Northwind = {}));
 })(FruitCorrect || (FruitCorrect = {}));
 var FruitCorrect;
@@ -1077,7 +1077,7 @@ var FruitCorrect;
             var Fields;
             (function (Fields) {
             })(Fields = CustomerRow.Fields || (CustomerRow.Fields = {}));
-            ['ID', 'CustomerID', 'CompanyName', 'ContactName', 'ContactTitle', 'Address', 'City', 'Region', 'PostalCode', 'Country', 'Phone', 'Fax', 'NoteList', 'Representatives', 'LastContactDate', 'LastContactedBy', 'Email', 'SendBulletin'].forEach(function (x) { return Fields[x] = x; });
+            ['ID', 'CustomerID', 'CompanyName', 'Address', 'City', 'Region', 'PostalCode', 'Country', 'Phone', 'Fax', 'NoteList', 'Representatives', 'Email', 'SendBulletin', 'BulstatEIK', 'DdsNumber', 'BankAccount'].forEach(function (x) { return Fields[x] = x; });
         })(CustomerRow = Northwind.CustomerRow || (Northwind.CustomerRow = {}));
     })(Northwind = FruitCorrect.Northwind || (FruitCorrect.Northwind = {}));
 })(FruitCorrect || (FruitCorrect = {}));
@@ -1111,7 +1111,7 @@ var FruitCorrect;
         }(Serenity.PrefixedContext));
         EmployeeForm.formKey = 'Northwind.Employee';
         Northwind.EmployeeForm = EmployeeForm;
-        [].forEach(function (x) { return Object.defineProperty(EmployeeForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+        [['FirstName', function () { return Serenity.StringEditor; }], ['LastName', function () { return Serenity.StringEditor; }], ['Gender', function () { return Serenity.EnumEditor; }], ['BirthDate', function () { return Serenity.DateEditor; }], ['HireDate', function () { return Serenity.DateEditor; }], ['Address', function () { return Serenity.StringEditor; }], ['City', function () { return Serenity.StringEditor; }], ['Country', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(EmployeeForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(Northwind = FruitCorrect.Northwind || (FruitCorrect.Northwind = {}));
 })(FruitCorrect || (FruitCorrect = {}));
 var FruitCorrect;
@@ -1131,7 +1131,7 @@ var FruitCorrect;
             var Fields;
             (function (Fields) {
             })(Fields = EmployeeRow.Fields || (EmployeeRow.Fields = {}));
-            ['EmployeeID', 'LastName', 'FirstName', 'FullName', 'Title', 'TitleOfCourtesy', 'BirthDate', 'HireDate', 'Address', 'City', 'Region', 'PostalCode', 'Country', 'HomePhone', 'Extension', 'Photo', 'Notes', 'ReportsTo', 'PhotoPath', 'ReportsToFullName', 'ReportsToLastName', 'ReportsToFirstName', 'ReportsToTitle', 'ReportsToTitleOfCourtesy', 'ReportsToBirthDate', 'ReportsToHireDate', 'ReportsToAddress', 'ReportsToCity', 'ReportsToRegion', 'ReportsToPostalCode', 'ReportsToCountry', 'ReportsToHomePhone', 'ReportsToExtension', 'ReportsToPhoto', 'ReportsToNotes', 'ReportsToReportsTo', 'ReportsToPhotoPath', 'Gender'].forEach(function (x) { return Fields[x] = x; });
+            ['EmployeeID', 'LastName', 'FirstName', 'FullName', 'BirthDate', 'HireDate', 'Address', 'City', 'Country', 'Photo', 'Notes', 'PhotoPath', 'Gender'].forEach(function (x) { return Fields[x] = x; });
         })(EmployeeRow = Northwind.EmployeeRow || (Northwind.EmployeeRow = {}));
     })(Northwind = FruitCorrect.Northwind || (FruitCorrect.Northwind = {}));
 })(FruitCorrect || (FruitCorrect = {}));
@@ -1209,7 +1209,7 @@ var FruitCorrect;
         }(Serenity.PrefixedContext));
         OrderDetailForm.formKey = 'Northwind.OrderDetail';
         Northwind.OrderDetailForm = OrderDetailForm;
-        [['ProductID', function () { return Serenity.LookupEditor; }], ['UnitPrice', function () { return Serenity.DecimalEditor; }], ['Quantity', function () { return Serenity.IntegerEditor; }], ['Discount', function () { return Serenity.DecimalEditor; }]].forEach(function (x) { return Object.defineProperty(OrderDetailForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+        [['ProductID', function () { return Serenity.LookupEditor; }], ['UnitPrice', function () { return Serenity.DecimalEditor; }], ['Quantity', function () { return Serenity.IntegerEditor; }], ['PhisicalQuantity', function () { return Serenity.IntegerEditor; }], ['Discount', function () { return Serenity.DecimalEditor; }]].forEach(function (x) { return Object.defineProperty(OrderDetailForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(Northwind = FruitCorrect.Northwind || (FruitCorrect.Northwind = {}));
 })(FruitCorrect || (FruitCorrect = {}));
 var FruitCorrect;
@@ -1223,7 +1223,7 @@ var FruitCorrect;
             var Fields;
             (function (Fields) {
             })(Fields = OrderDetailRow.Fields || (OrderDetailRow.Fields = {}));
-            ['DetailID', 'OrderID', 'ProductID', 'UnitPrice', 'Quantity', 'Discount', 'OrderCustomerID', 'OrderEmployeeID', 'OrderDate', 'OrderShippedDate', 'OrderShipVia', 'OrderShipCity', 'OrderShipCountry', 'ProductName', 'ProductDiscontinued', 'ProductSupplierID', 'ProductQuantityPerUnit', 'ProductUnitPrice', 'LineTotal'].forEach(function (x) { return Fields[x] = x; });
+            ['DetailID', 'OrderID', 'ProductID', 'UnitPrice', 'Quantity', 'PhisicalQuantity', 'Discount', 'OrderCustomerID', 'OrderEmployeeID', 'OrderDate', 'OrderShippedDate', 'OrderShipVia', 'OrderShipCity', 'OrderShipCountry', 'ProductName', 'ProductDiscontinued', 'ProductSupplierID', 'ProductQuantityPerUnit', 'ProductUnitPrice', 'LineTotal'].forEach(function (x) { return Fields[x] = x; });
         })(OrderDetailRow = Northwind.OrderDetailRow || (Northwind.OrderDetailRow = {}));
     })(Northwind = FruitCorrect.Northwind || (FruitCorrect.Northwind = {}));
 })(FruitCorrect || (FruitCorrect = {}));
@@ -1277,7 +1277,7 @@ var FruitCorrect;
             var Fields;
             (function (Fields) {
             })(Fields = OrderRow.Fields || (OrderRow.Fields = {}));
-            ['OrderID', 'CustomerID', 'EmployeeID', 'OrderDate', 'RequiredDate', 'ShippedDate', 'ShipVia', 'Freight', 'ShipName', 'ShipAddress', 'ShipCity', 'ShipRegion', 'ShipPostalCode', 'ShipCountry', 'CustomerCompanyName', 'CustomerContactName', 'CustomerContactTitle', 'CustomerCity', 'CustomerRegion', 'CustomerCountry', 'CustomerPhone', 'CustomerFax', 'EmployeeFullName', 'EmployeeGender', 'EmployeeReportsToFullName', 'ShipViaCompanyName', 'ShipViaPhone', 'ShippingState', 'DetailList'].forEach(function (x) { return Fields[x] = x; });
+            ['OrderID', 'CustomerID', 'EmployeeID', 'OrderDate', 'RequiredDate', 'ShippedDate', 'ShipVia', 'Freight', 'ShipName', 'ShipAddress', 'ShipCity', 'ShipRegion', 'ShipPostalCode', 'ShipCountry', 'CustomerCompanyName', 'CustomerCity', 'CustomerRegion', 'CustomerCountry', 'CustomerPhone', 'CustomerFax', 'EmployeeFullName', 'EmployeeGender', 'ShipViaCompanyName', 'ShipViaPhone', 'ShippingState', 'DetailList'].forEach(function (x) { return Fields[x] = x; });
         })(OrderRow = Northwind.OrderRow || (Northwind.OrderRow = {}));
     })(Northwind = FruitCorrect.Northwind || (FruitCorrect.Northwind = {}));
 })(FruitCorrect || (FruitCorrect = {}));
@@ -1323,7 +1323,7 @@ var FruitCorrect;
         }(Serenity.PrefixedContext));
         ProductForm.formKey = 'Northwind.Product';
         Northwind.ProductForm = ProductForm;
-        [['ProductName', function () { return Serenity.StringEditor; }], ['ProductImage', function () { return Serenity.ImageUploadEditor; }], ['Discontinued', function () { return Serenity.BooleanEditor; }], ['SupplierID', function () { return Serenity.LookupEditor; }], ['CategoryID', function () { return Serenity.LookupEditor; }], ['QuantityPerUnit', function () { return Serenity.StringEditor; }], ['UnitPrice', function () { return Serenity.DecimalEditor; }], ['UnitsInStock', function () { return Serenity.IntegerEditor; }], ['UnitsOnOrder', function () { return Serenity.IntegerEditor; }], ['ReorderLevel', function () { return Serenity.IntegerEditor; }]].forEach(function (x) { return Object.defineProperty(ProductForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+        [['ProductName', function () { return Serenity.StringEditor; }], ['ProductImage', function () { return Serenity.ImageUploadEditor; }], ['Discontinued', function () { return Serenity.BooleanEditor; }], ['SupplierID', function () { return Serenity.LookupEditor; }], ['CategoryID', function () { return Serenity.LookupEditor; }], ['ExpirationDate', function () { return Serenity.DateEditor; }], ['QuantityPerUnit', function () { return Serenity.StringEditor; }], ['UnitPrice', function () { return Serenity.DecimalEditor; }], ['UnitsInStock', function () { return Serenity.IntegerEditor; }], ['UnitsOnOrder', function () { return Serenity.IntegerEditor; }], ['ReorderLevel', function () { return Serenity.IntegerEditor; }]].forEach(function (x) { return Object.defineProperty(ProductForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(Northwind = FruitCorrect.Northwind || (FruitCorrect.Northwind = {}));
 })(FruitCorrect || (FruitCorrect = {}));
 var FruitCorrect;
@@ -1391,7 +1391,7 @@ var FruitCorrect;
             var Fields;
             (function (Fields) {
             })(Fields = ProductRow.Fields || (ProductRow.Fields = {}));
-            ['ProductID', 'ProductName', 'ProductImage', 'Discontinued', 'SupplierID', 'CategoryID', 'QuantityPerUnit', 'UnitPrice', 'UnitsInStock', 'UnitsOnOrder', 'ReorderLevel', 'SupplierCompanyName', 'SupplierContactName', 'SupplierContactTitle', 'SupplierAddress', 'SupplierCity', 'SupplierRegion', 'SupplierPostalCode', 'SupplierCountry', 'SupplierPhone', 'SupplierFax', 'SupplierHomePage', 'CategoryName', 'CategoryDescription', 'CategoryPicture'].forEach(function (x) { return Fields[x] = x; });
+            ['ProductID', 'ProductName', 'ProductImage', 'Discontinued', 'SupplierID', 'CategoryID', 'QuantityPerUnit', 'UnitPrice', 'UnitsInStock', 'UnitsOnOrder', 'ReorderLevel', 'ExpirationDate', 'SupplierCompanyName', 'SupplierContactName', 'SupplierContactTitle', 'SupplierAddress', 'SupplierCity', 'SupplierRegion', 'SupplierPostalCode', 'SupplierCountry', 'SupplierPhone', 'SupplierFax', 'SupplierHomePage', 'CategoryName', 'CategoryDescription', 'CategoryPicture'].forEach(function (x) { return Fields[x] = x; });
         })(ProductRow = Northwind.ProductRow || (Northwind.ProductRow = {}));
     })(Northwind = FruitCorrect.Northwind || (FruitCorrect.Northwind = {}));
 })(FruitCorrect || (FruitCorrect = {}));
@@ -4646,16 +4646,94 @@ var FruitCorrect;
 (function (FruitCorrect) {
     var Northwind;
     (function (Northwind) {
+        var CategoryEditor = (function (_super) {
+            __extends(CategoryEditor, _super);
+            function CategoryEditor(hidden) {
+                return _super.call(this, hidden) || this;
+            }
+            CategoryEditor.prototype.getLookupKey = function () {
+                return Northwind.CategoryRow.lookupKey;
+            };
+            CategoryEditor.prototype.getItemText = function (item, lookup) {
+                var visited = {};
+                var text = item.CategoryName;
+                while (item.ParentCategoryID != null && !visited[item.ParentCategoryID]) {
+                    item = lookup.itemById[item.ParentCategoryID];
+                    if (!item)
+                        break;
+                    visited[item.CategoryID] = true;
+                    text = item.CategoryName + " >> " + text;
+                }
+                return text;
+            };
+            return CategoryEditor;
+        }(Serenity.LookupEditorBase));
+        CategoryEditor = __decorate([
+            Serenity.Decorators.registerEditor()
+        ], CategoryEditor);
+        Northwind.CategoryEditor = CategoryEditor;
+    })(Northwind = FruitCorrect.Northwind || (FruitCorrect.Northwind = {}));
+})(FruitCorrect || (FruitCorrect = {}));
+var FruitCorrect;
+(function (FruitCorrect) {
+    var Northwind;
+    (function (Northwind) {
         var CategoryGrid = (function (_super) {
             __extends(CategoryGrid, _super);
             function CategoryGrid(container) {
-                return _super.call(this, container) || this;
+                var _this = _super.call(this, container) || this;
+                // ReSharper disable once WrongExpressionStatement
+                new Serenity.TreeGridMixin({
+                    grid: _this,
+                    getParentId: function (x) { return x.ParentCategoryID; },
+                    toggleField: Northwind.CategoryRow.Fields.CategoryName,
+                    initialCollapse: function () { return false; }
+                });
+                return _this;
             }
             CategoryGrid.prototype.getColumnsKey = function () { return "Northwind.Category"; };
             CategoryGrid.prototype.getDialogType = function () { return Northwind.CategoryDialog; };
             CategoryGrid.prototype.getIdProperty = function () { return Northwind.CategoryRow.idProperty; };
             CategoryGrid.prototype.getLocalTextPrefix = function () { return Northwind.CategoryRow.localTextPrefix; };
             CategoryGrid.prototype.getService = function () { return Northwind.CategoryService.baseUrl; };
+            CategoryGrid.prototype.subDialogDataChange = function () {
+                _super.prototype.subDialogDataChange.call(this);
+                Q.reloadLookup(Northwind.CategoryRow.lookupKey);
+            };
+            CategoryGrid.prototype.usePager = function () {
+                return false;
+            };
+            CategoryGrid.prototype.getColumns = function () {
+                var columns = _super.prototype.getColumns.call(this);
+                columns.splice(Q.indexOf(columns, function (x) { return x.name == Northwind.CategoryRow.Fields.CategoryName; }) + 1, 0, {
+                    field: 'Add Child Unit',
+                    name: '',
+                    format: function (ctx) { return '<a class="inline-action add-child-unit" title="add child unit"></a>'; },
+                    width: 24,
+                    minWidth: 24,
+                    maxWidth: 24
+                });
+                return columns;
+            };
+            CategoryGrid.prototype.onClick = function (e, row, cell) {
+                _super.prototype.onClick.call(this, e, row, cell);
+                if (e.isDefaultPrevented())
+                    return;
+                var item = this.itemAt(row);
+                var target = $(e.target);
+                if (target.parent().hasClass('inline-action'))
+                    target = target.parent();
+                if (target.hasClass('inline-action')) {
+                    e.preventDefault();
+                    if (target.hasClass('add-child-unit')) {
+                        var dlg = new Northwind.CategoryDialog();
+                        this.initDialog(dlg);
+                        dlg.loadEntityAndOpenDialog({
+                            ParentUnitId: item.CategoryID
+                        });
+                    }
+                }
+            };
             return CategoryGrid;
         }(Serenity.EntityGrid));
         CategoryGrid = __decorate([
@@ -5393,7 +5471,6 @@ var FruitCorrect;
             function ProductGrid(container) {
                 var _this = _super.call(this, container) || this;
                 _this.pendingChanges = {};
-                _this.slickContainer.on('change', '.edit:input', function (e) { return _this.inputsChange(e); });
                 return _this;
             }
             ProductGrid.prototype.getColumnsKey = function () { return "Northwind.Product"; };
@@ -5429,194 +5506,13 @@ var FruitCorrect;
                         }
                     }
                 }));
-                buttons.push({
-                    title: 'Save Changes',
-                    cssClass: 'apply-changes-button disabled',
-                    onClick: function (e) { return _this.saveClick(); },
-                    separator: true
-                });
+                //buttons.push({
+                //    title: 'Save Changes',
+                //    cssClass: 'apply-changes-button disabled',
+                //    onClick: e => this.saveClick(),
+                //    separator: true
+                //});
                 return buttons;
-            };
-            ProductGrid.prototype.onViewProcessData = function (response) {
-                this.pendingChanges = {};
-                this.setSaveButtonState();
-                return _super.prototype.onViewProcessData.call(this, response);
-            };
-            // PLEASE NOTE! Inline editing in grids is not something Serenity supports nor recommends.
-            // SlickGrid has some set of limitations, UI is very hard to use on some devices like mobile, 
-            // custom widgets and validations are not possible, and as a bonus the code can become a mess.
-            // 
-            // This was just a sample how-to after much requests, and is not supported. 
-            // This is all we can offer, please don't ask us to Guide you...
-            /**
-             * It would be nice if we could use autonumeric, Serenity editors etc. here, to control input validation,
-             * but it's not supported by SlickGrid as we are only allowed to return a string, and should attach
-             * no event handlers to rendered cell contents
-             */
-            ProductGrid.prototype.numericInputFormatter = function (ctx) {
-                var klass = 'edit numeric';
-                var item = ctx.item;
-                var pending = this.pendingChanges[item.ProductID];
-                if (pending && pending[ctx.column.field] !== undefined) {
-                    klass += ' dirty';
-                }
-                var value = this.getEffectiveValue(item, ctx.column.field);
-                return "<input type='text' class='" + klass +
-                    "' data-field='" + ctx.column.field +
-                    "' value='" + Q.formatNumber(value, '0.##') + "'/>";
-            };
-            ProductGrid.prototype.stringInputFormatter = function (ctx) {
-                var klass = 'edit string';
-                var item = ctx.item;
-                var pending = this.pendingChanges[item.ProductID];
-                var column = ctx.column;
-                if (pending && pending[column.field] !== undefined) {
-                    klass += ' dirty';
-                }
-                var value = this.getEffectiveValue(item, column.field);
-                return "<input type='text' class='" + klass +
-                    "' data-field='" + column.field +
-                    "' value='" + Q.htmlEncode(value) +
-                    "' maxlength='" + column.sourceItem.maxLength + "'/>";
-            };
-            /**
-             * Sorry but you cannot use LookupEditor, e.g. Select2 here, only possible is a SELECT element
-             */
-            ProductGrid.prototype.selectFormatter = function (ctx, idField, lookup) {
-                var fld = Northwind.ProductRow.Fields;
-                var klass = 'edit';
-                var item = ctx.item;
-                var pending = this.pendingChanges[item.ProductID];
-                var column = ctx.column;
-                if (pending && pending[idField] !== undefined) {
-                    klass += ' dirty';
-                }
-                var value = this.getEffectiveValue(item, idField);
-                var markup = "<select class='" + klass +
-                    "' data-field='" + idField +
-                    "' style='width: 100%; max-width: 100%'>";
-                for (var _i = 0, _a = lookup.items; _i < _a.length; _i++) {
-                    var c = _a[_i];
-                    var id = c[lookup.idField];
-                    markup += "<option value='" + id + "'";
-                    if (id == value) {
-                        markup += " selected";
-                    }
-                    markup += ">" + Q.htmlEncode(c[lookup.textField]) + "</option>";
-                }
-                return markup + "</select>";
-            };
-            ProductGrid.prototype.getEffectiveValue = function (item, field) {
-                var pending = this.pendingChanges[item.ProductID];
-                if (pending && pending[field] !== undefined) {
-                    return pending[field];
-                }
-                return item[field];
-            };
-            ProductGrid.prototype.getColumns = function () {
-                var _this = this;
-                var columns = _super.prototype.getColumns.call(this);
-                var num = function (ctx) { return _this.numericInputFormatter(ctx); };
-                var str = function (ctx) { return _this.stringInputFormatter(ctx); };
-                var fld = Northwind.ProductRow.Fields;
-                Q.first(columns, function (x) { return x.field === 'QuantityPerUnit'; }).format = str;
-                var category = Q.first(columns, function (x) { return x.field === fld.CategoryName; });
-                category.referencedFields = [fld.CategoryID];
-                category.format = function (ctx) { return _this.selectFormatter(ctx, fld.CategoryID, Northwind.CategoryRow.getLookup()); };
-                var supplier = Q.first(columns, function (x) { return x.field === fld.SupplierCompanyName; });
-                supplier.referencedFields = [fld.SupplierID];
-                supplier.format = function (ctx) { return _this.selectFormatter(ctx, fld.SupplierID, Northwind.SupplierRow.getLookup()); };
-                Q.first(columns, function (x) { return x.field === fld.UnitPrice; }).format = num;
-                Q.first(columns, function (x) { return x.field === fld.UnitsInStock; }).format = num;
-                Q.first(columns, function (x) { return x.field === fld.UnitsOnOrder; }).format = num;
-                Q.first(columns, function (x) { return x.field === fld.ReorderLevel; }).format = num;
-                return columns;
-            };
-            ProductGrid.prototype.inputsChange = function (e) {
-                var cell = this.slickGrid.getCellFromEvent(e);
-                var item = this.itemAt(cell.row);
-                var input = $(e.target);
-                var field = input.data('field');
-                var text = Q.coalesce(Q.trimToNull(input.val()), '0');
-                var pending = this.pendingChanges[item.ProductID];
-                var effective = this.getEffectiveValue(item, field);
-                var oldText;
-                if (input.hasClass("numeric"))
-                    oldText = Q.formatNumber(effective, '0.##');
-                else
-                    oldText = effective;
-                var value;
-                if (field === 'UnitPrice') {
-                    value = Q.parseDecimal(text);
-                    if (value == null || isNaN(value)) {
-                        Q.notifyError(Q.text('Validation.Decimal'), '', null);
-                        input.val(oldText);
-                        input.focus();
-                        return;
-                    }
-                }
-                else if (input.hasClass("numeric")) {
-                    var i = Q.parseInteger(text);
-                    if (isNaN(i) || i > 32767 || i < 0) {
-                        Q.notifyError(Q.text('Validation.Integer'), '', null);
-                        input.val(oldText);
-                        input.focus();
-                        return;
-                    }
-                    value = i;
-                }
-                else
-                    value = text;
-                if (!pending) {
-                    this.pendingChanges[item.ProductID] = pending = {};
-                }
-                pending[field] = value;
-                item[field] = value;
-                this.view.refresh();
-                if (input.hasClass("numeric"))
-                    value = Q.formatNumber(value, '0.##');
-                input.val(value).addClass('dirty');
-                this.setSaveButtonState();
-            };
-            ProductGrid.prototype.setSaveButtonState = function () {
-                this.toolbar.findButton('apply-changes-button').toggleClass('disabled', Object.keys(this.pendingChanges).length === 0);
-            };
-            ProductGrid.prototype.saveClick = function () {
-                if (Object.keys(this.pendingChanges).length === 0) {
-                    return;
-                }
-                // this calls save service for all modified rows, one by one
-                // you could write a batch update service
-                var keys = Object.keys(this.pendingChanges);
-                var current = -1;
-                var self = this;
-                (function saveNext() {
-                    if (++current >= keys.length) {
-                        self.refresh();
-                        return;
-                    }
-                    var key = keys[current];
-                    var entity = Q.deepClone(self.pendingChanges[key]);
-                    entity.ProductID = key;
-                    Q.serviceRequest('Northwind/Product/Update', {
-                        EntityId: key,
-                        Entity: entity
-                    }, function (response) {
-                        delete self.pendingChanges[key];
-                        saveNext();
-                    });
-                })();
-            };
-            ProductGrid.prototype.getQuickFilters = function () {
-                var flt = _super.prototype.getQuickFilters.call(this);
-                var q = Q.parseQueryString();
-                if (q["cat"]) {
-                    var category = Q.tryFirst(flt, function (x) { return x.field == "CategoryID"; });
-                    category.init = function (e) {
-                        e.element.getWidget(Serenity.LookupEditor).value = q["cat"];
-                    };
-                }
-                return flt;
             };
             return ProductGrid;
         }(Serenity.EntityGrid));

@@ -1294,6 +1294,7 @@ declare namespace FruitCorrect.Northwind {
     interface CategoryForm {
         CategoryName: Serenity.StringEditor;
         Description: Serenity.StringEditor;
+        ParentCategoryId: Organization.BusinessUnitEditor;
     }
 }
 declare namespace FruitCorrect.Northwind {
@@ -1339,7 +1340,9 @@ declare namespace FruitCorrect.Northwind {
         CategoryID?: number;
         CategoryName?: string;
         Description?: string;
+        ParentCategoryID?: number;
         Picture?: number[];
+        ParentCategoryName?: string;
     }
     namespace CategoryRow {
         const idProperty = "CategoryID";
@@ -1351,7 +1354,9 @@ declare namespace FruitCorrect.Northwind {
             const CategoryID: string;
             const CategoryName: string;
             const Description: string;
+            const ParentCategoryID: string;
             const Picture: string;
+            const ParentCategoryName: string;
         }
     }
 }
@@ -1433,27 +1438,11 @@ declare namespace FruitCorrect.Northwind {
 declare namespace FruitCorrect.Northwind {
     interface CustomerDetailsRow {
         Id?: number;
-        LastContactDate?: string;
-        LastContactedBy?: number;
         Email?: string;
+        BulstatEIK?: string;
+        DdsNumber?: string;
+        BankAccount?: string;
         SendBulletin?: boolean;
-        LastContactedByLastName?: string;
-        LastContactedByFirstName?: string;
-        LastContactedByTitle?: string;
-        LastContactedByTitleOfCourtesy?: string;
-        LastContactedByBirthDate?: string;
-        LastContactedByHireDate?: string;
-        LastContactedByAddress?: string;
-        LastContactedByCity?: string;
-        LastContactedByRegion?: string;
-        LastContactedByPostalCode?: string;
-        LastContactedByCountry?: string;
-        LastContactedByHomePhone?: string;
-        LastContactedByExtension?: string;
-        LastContactedByPhoto?: number[];
-        LastContactedByNotes?: string;
-        LastContactedByReportsTo?: number;
-        LastContactedByPhotoPath?: string;
     }
     namespace CustomerDetailsRow {
         const idProperty = "Id";
@@ -1461,27 +1450,11 @@ declare namespace FruitCorrect.Northwind {
         const localTextPrefix = "Northwind.CustomerDetails";
         namespace Fields {
             const Id: string;
-            const LastContactDate: string;
-            const LastContactedBy: string;
             const Email: string;
+            const BulstatEIK: string;
+            const DdsNumber: string;
+            const BankAccount: string;
             const SendBulletin: string;
-            const LastContactedByLastName: string;
-            const LastContactedByFirstName: string;
-            const LastContactedByTitle: string;
-            const LastContactedByTitleOfCourtesy: string;
-            const LastContactedByBirthDate: string;
-            const LastContactedByHireDate: string;
-            const LastContactedByAddress: string;
-            const LastContactedByCity: string;
-            const LastContactedByRegion: string;
-            const LastContactedByPostalCode: string;
-            const LastContactedByCountry: string;
-            const LastContactedByHomePhone: string;
-            const LastContactedByExtension: string;
-            const LastContactedByPhoto: string;
-            const LastContactedByNotes: string;
-            const LastContactedByReportsTo: string;
-            const LastContactedByPhotoPath: string;
         }
     }
 }
@@ -1492,8 +1465,6 @@ declare namespace FruitCorrect.Northwind {
     interface CustomerForm {
         CustomerID: Serenity.StringEditor;
         CompanyName: Serenity.StringEditor;
-        ContactName: Serenity.StringEditor;
-        ContactTitle: Serenity.StringEditor;
         Representatives: Serenity.LookupEditor;
         Address: Serenity.StringEditor;
         City: Serenity.StringEditor;
@@ -1503,8 +1474,9 @@ declare namespace FruitCorrect.Northwind {
         Phone: Serenity.StringEditor;
         Fax: Serenity.StringEditor;
         NoteList: NotesEditor;
-        LastContactDate: Serenity.DateEditor;
-        LastContactedBy: Serenity.LookupEditor;
+        BulstatEIK: Serenity.StringEditor;
+        DdsNumber: Serenity.StringEditor;
+        BankAccount: Serenity.StringEditor;
         Email: Serenity.EmailEditor;
         SendBulletin: Serenity.BooleanEditor;
     }
@@ -1550,8 +1522,6 @@ declare namespace FruitCorrect.Northwind {
         ID?: number;
         CustomerID?: string;
         CompanyName?: string;
-        ContactName?: string;
-        ContactTitle?: string;
         Address?: string;
         City?: string;
         Region?: string;
@@ -1561,10 +1531,11 @@ declare namespace FruitCorrect.Northwind {
         Fax?: string;
         NoteList?: NoteRow[];
         Representatives?: number[];
-        LastContactDate?: string;
-        LastContactedBy?: number;
         Email?: string;
         SendBulletin?: boolean;
+        BulstatEIK?: string;
+        DdsNumber?: string;
+        BankAccount?: string;
     }
     namespace CustomerRow {
         const idProperty = "ID";
@@ -1576,8 +1547,6 @@ declare namespace FruitCorrect.Northwind {
             const ID: string;
             const CustomerID: string;
             const CompanyName: string;
-            const ContactName: string;
-            const ContactTitle: string;
             const Address: string;
             const City: string;
             const Region: string;
@@ -1587,10 +1556,11 @@ declare namespace FruitCorrect.Northwind {
             const Fax: string;
             const NoteList: string;
             const Representatives: string;
-            const LastContactDate: string;
-            const LastContactedBy: string;
             const Email: string;
             const SendBulletin: string;
+            const BulstatEIK: string;
+            const DdsNumber: string;
+            const BankAccount: string;
         }
     }
 }
@@ -1614,10 +1584,20 @@ declare namespace FruitCorrect.Northwind {
     }
 }
 declare namespace FruitCorrect.Northwind {
+}
+declare namespace FruitCorrect.Northwind {
     class EmployeeForm extends Serenity.PrefixedContext {
         static formKey: string;
     }
     interface EmployeeForm {
+        FirstName: Serenity.StringEditor;
+        LastName: Serenity.StringEditor;
+        Gender: Serenity.EnumEditor;
+        BirthDate: Serenity.DateEditor;
+        HireDate: Serenity.DateEditor;
+        Address: Serenity.StringEditor;
+        City: Serenity.StringEditor;
+        Country: Serenity.StringEditor;
     }
 }
 declare namespace FruitCorrect.Northwind {
@@ -1626,39 +1606,14 @@ declare namespace FruitCorrect.Northwind {
         LastName?: string;
         FirstName?: string;
         FullName?: string;
-        Title?: string;
-        TitleOfCourtesy?: string;
         BirthDate?: string;
         HireDate?: string;
         Address?: string;
         City?: string;
-        Region?: string;
-        PostalCode?: string;
         Country?: string;
-        HomePhone?: string;
-        Extension?: string;
         Photo?: number[];
         Notes?: string;
-        ReportsTo?: number;
         PhotoPath?: string;
-        ReportsToFullName?: string;
-        ReportsToLastName?: string;
-        ReportsToFirstName?: string;
-        ReportsToTitle?: string;
-        ReportsToTitleOfCourtesy?: string;
-        ReportsToBirthDate?: string;
-        ReportsToHireDate?: string;
-        ReportsToAddress?: string;
-        ReportsToCity?: string;
-        ReportsToRegion?: string;
-        ReportsToPostalCode?: string;
-        ReportsToCountry?: string;
-        ReportsToHomePhone?: string;
-        ReportsToExtension?: string;
-        ReportsToPhoto?: number[];
-        ReportsToNotes?: string;
-        ReportsToReportsTo?: number;
-        ReportsToPhotoPath?: string;
         Gender?: Gender;
     }
     namespace EmployeeRow {
@@ -1672,39 +1627,14 @@ declare namespace FruitCorrect.Northwind {
             const LastName: string;
             const FirstName: string;
             const FullName: string;
-            const Title: string;
-            const TitleOfCourtesy: string;
             const BirthDate: string;
             const HireDate: string;
             const Address: string;
             const City: string;
-            const Region: string;
-            const PostalCode: string;
             const Country: string;
-            const HomePhone: string;
-            const Extension: string;
             const Photo: string;
             const Notes: string;
-            const ReportsTo: string;
             const PhotoPath: string;
-            const ReportsToFullName: string;
-            const ReportsToLastName: string;
-            const ReportsToFirstName: string;
-            const ReportsToTitle: string;
-            const ReportsToTitleOfCourtesy: string;
-            const ReportsToBirthDate: string;
-            const ReportsToHireDate: string;
-            const ReportsToAddress: string;
-            const ReportsToCity: string;
-            const ReportsToRegion: string;
-            const ReportsToPostalCode: string;
-            const ReportsToCountry: string;
-            const ReportsToHomePhone: string;
-            const ReportsToExtension: string;
-            const ReportsToPhoto: string;
-            const ReportsToNotes: string;
-            const ReportsToReportsTo: string;
-            const ReportsToPhotoPath: string;
             const Gender: string;
         }
     }
@@ -1822,6 +1752,7 @@ declare namespace FruitCorrect.Northwind {
         ProductID: Serenity.LookupEditor;
         UnitPrice: Serenity.DecimalEditor;
         Quantity: Serenity.IntegerEditor;
+        PhisicalQuantity: Serenity.IntegerEditor;
         Discount: Serenity.DecimalEditor;
     }
 }
@@ -1832,6 +1763,7 @@ declare namespace FruitCorrect.Northwind {
         ProductID?: number;
         UnitPrice?: number;
         Quantity?: number;
+        PhisicalQuantity?: number;
         Discount?: number;
         OrderCustomerID?: string;
         OrderEmployeeID?: number;
@@ -1856,6 +1788,7 @@ declare namespace FruitCorrect.Northwind {
             const ProductID: string;
             const UnitPrice: string;
             const Quantity: string;
+            const PhisicalQuantity: string;
             const Discount: string;
             const OrderCustomerID: string;
             const OrderEmployeeID: string;
@@ -1927,8 +1860,6 @@ declare namespace FruitCorrect.Northwind {
         ShipPostalCode?: string;
         ShipCountry?: string;
         CustomerCompanyName?: string;
-        CustomerContactName?: string;
-        CustomerContactTitle?: string;
         CustomerCity?: string;
         CustomerRegion?: string;
         CustomerCountry?: string;
@@ -1936,7 +1867,6 @@ declare namespace FruitCorrect.Northwind {
         CustomerFax?: string;
         EmployeeFullName?: string;
         EmployeeGender?: Gender;
-        EmployeeReportsToFullName?: string;
         ShipViaCompanyName?: string;
         ShipViaPhone?: string;
         ShippingState?: OrderShippingState;
@@ -1964,8 +1894,6 @@ declare namespace FruitCorrect.Northwind {
             const ShipPostalCode: string;
             const ShipCountry: string;
             const CustomerCompanyName: string;
-            const CustomerContactName: string;
-            const CustomerContactTitle: string;
             const CustomerCity: string;
             const CustomerRegion: string;
             const CustomerCountry: string;
@@ -1973,7 +1901,6 @@ declare namespace FruitCorrect.Northwind {
             const CustomerFax: string;
             const EmployeeFullName: string;
             const EmployeeGender: string;
-            const EmployeeReportsToFullName: string;
             const ShipViaCompanyName: string;
             const ShipViaPhone: string;
             const ShippingState: string;
@@ -2016,6 +1943,7 @@ declare namespace FruitCorrect.Northwind {
         Discontinued: Serenity.BooleanEditor;
         SupplierID: Serenity.LookupEditor;
         CategoryID: Serenity.LookupEditor;
+        ExpirationDate: Serenity.DateEditor;
         QuantityPerUnit: Serenity.StringEditor;
         UnitPrice: Serenity.DecimalEditor;
         UnitsInStock: Serenity.IntegerEditor;
@@ -2114,6 +2042,7 @@ declare namespace FruitCorrect.Northwind {
         UnitsInStock?: number;
         UnitsOnOrder?: number;
         ReorderLevel?: number;
+        ExpirationDate?: string;
         SupplierCompanyName?: string;
         SupplierContactName?: string;
         SupplierContactTitle?: string;
@@ -2147,6 +2076,7 @@ declare namespace FruitCorrect.Northwind {
             const UnitsInStock: string;
             const UnitsOnOrder: string;
             const ReorderLevel: string;
+            const ExpirationDate: string;
             const SupplierCompanyName: string;
             const SupplierContactName: string;
             const SupplierContactTitle: string;
@@ -3219,6 +3149,13 @@ declare namespace FruitCorrect.Northwind {
     }
 }
 declare namespace FruitCorrect.Northwind {
+    class CategoryEditor extends Serenity.LookupEditorBase<CategoryRow, any> {
+        constructor(hidden: JQuery);
+        protected getLookupKey(): string;
+        protected getItemText(item: CategoryRow, lookup: Q.Lookup<CategoryRow>): string;
+    }
+}
+declare namespace FruitCorrect.Northwind {
     class CategoryGrid extends Serenity.EntityGrid<CategoryRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): any;
@@ -3226,6 +3163,10 @@ declare namespace FruitCorrect.Northwind {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        protected subDialogDataChange(): void;
+        protected usePager(): boolean;
+        protected getColumns(): Slick.Column[];
+        protected onClick(e: JQueryEventObject, row: number, cell: number): void;
     }
 }
 declare namespace FruitCorrect.Northwind {
@@ -3415,24 +3356,6 @@ declare namespace FruitCorrect.Northwind {
         private pendingChanges;
         constructor(container: JQuery);
         protected getButtons(): Serenity.ToolButton[];
-        protected onViewProcessData(response: any): Serenity.ListResponse<ProductRow>;
-        /**
-         * It would be nice if we could use autonumeric, Serenity editors etc. here, to control input validation,
-         * but it's not supported by SlickGrid as we are only allowed to return a string, and should attach
-         * no event handlers to rendered cell contents
-         */
-        private numericInputFormatter(ctx);
-        private stringInputFormatter(ctx);
-        /**
-         * Sorry but you cannot use LookupEditor, e.g. Select2 here, only possible is a SELECT element
-         */
-        private selectFormatter(ctx, idField, lookup);
-        private getEffectiveValue(item, field);
-        protected getColumns(): Slick.Column[];
-        private inputsChange(e);
-        private setSaveButtonState();
-        private saveClick();
-        protected getQuickFilters(): Serenity.QuickFilter<Serenity.Widget<any>, any>[];
     }
 }
 declare namespace FruitCorrect.Northwind {

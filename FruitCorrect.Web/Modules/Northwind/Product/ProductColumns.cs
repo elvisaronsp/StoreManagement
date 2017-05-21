@@ -19,6 +19,8 @@ namespace FruitCorrect.Northwind.Columns
         public String SupplierCompanyName { get; set; }
         [EditLink(ItemType = "Northwind.Category"), Width(150), QuickFilter, QuickFilterOption("multiple", true)]
         public String CategoryName { get; set; }
+
+        public DateTime ExpirationDate { get; set; }
         [Width(130)]
         public String QuantityPerUnit { get; set; }
         [Width(80), AlignRight]

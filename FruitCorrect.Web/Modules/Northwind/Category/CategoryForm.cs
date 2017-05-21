@@ -10,5 +10,7 @@ namespace FruitCorrect.Northwind.Forms
     {
         public String CategoryName { get; set; }
         public String Description { get; set; }
+
+        public Int32 ParentCategoryId { get; set; }
     }
 }

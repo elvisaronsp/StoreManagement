@@ -37,21 +37,7 @@ namespace FruitCorrect.Northwind.Entities
             get { return Fields.CompanyName[this]; }
             set { Fields.CompanyName[this] = value; }
         }
-
-        [DisplayName("Contact Name"), Size(30), QuickSearch]
-        public String ContactName
-        {
-            get { return Fields.ContactName[this]; }
-            set { Fields.ContactName[this] = value; }
-        }
-
-        [DisplayName("Contact Title"), Size(30)]
-        public String ContactTitle
-        {
-            get { return Fields.ContactTitle[this]; }
-            set { Fields.ContactTitle[this] = value; }
-        }
-
+        
         [DisplayName("Address"), Size(60)]
         public String Address
         {
@@ -100,21 +86,7 @@ namespace FruitCorrect.Northwind.Entities
             get { return Fields.Fax[this]; }
             set { Fields.Fax[this] = value; }
         }
-
-        [Origin("cd")]
-        public DateTime? LastContactDate
-        {
-            get { return Fields.LastContactDate[this]; }
-            set { Fields.LastContactDate[this] = value; }
-        }
-
-        [Origin("cd"), LookupEditor(typeof(EmployeeRow))]
-        public Int32? LastContactedBy
-        {
-            get { return Fields.LastContactedBy[this]; }
-            set { Fields.LastContactedBy[this] = value; }
-        }
-
+        
         [Origin("cd"), EmailEditor]
         public String Email
         {
@@ -122,6 +94,25 @@ namespace FruitCorrect.Northwind.Entities
             set { Fields.Email[this] = value; }
         }
 
+        [Origin("cd")]
+        public String BulstatEIK
+        {
+            get { return Fields.BulstatEIK[this]; }
+            set { Fields.BulstatEIK[this] = value; }
+        }
+
+        [Origin("cd")]
+        public String DdsNumber
+        {
+            get { return Fields.DdsNumber[this]; }
+            set { Fields.DdsNumber[this] = value; }
+        }
+        [Origin("cd")]
+        public String BankAccount
+        {
+            get { return Fields.BankAccount[this]; }
+            set { Fields.BankAccount[this] = value; }
+        }
         [Origin("cd"), DefaultValue(false)]
         public Boolean? SendBulletin
         {
@@ -167,8 +158,6 @@ namespace FruitCorrect.Northwind.Entities
             public Int32Field ID;
             public StringField CustomerID;
             public StringField CompanyName;
-            public StringField ContactName;
-            public StringField ContactTitle;
             public StringField Address;
             public StringField City;
             public StringField Region;
@@ -178,10 +167,11 @@ namespace FruitCorrect.Northwind.Entities
             public StringField Fax;
             public RowListField<NoteRow> NoteList;
             public ListField<Int32> Representatives;
-            public DateTimeField LastContactDate;
-            public Int32Field LastContactedBy;
             public StringField Email;
             public BooleanField SendBulletin;
+            public StringField BulstatEIK;
+            public StringField DdsNumber;
+            public StringField BankAccount;
 
             public RowFields()
             {

@@ -3,7 +3,9 @@
         CategoryID?: number;
         CategoryName?: string;
         Description?: string;
+        ParentCategoryID?: number;
         Picture?: number[];
+        ParentCategoryName?: string;
     }
 
     export namespace CategoryRow {
@@ -20,10 +22,11 @@
             export declare const CategoryID: string;
             export declare const CategoryName: string;
             export declare const Description: string;
+            export declare const ParentCategoryID: string;
             export declare const Picture: string;
+            export declare const ParentCategoryName: string;
         }
 
-        ['CategoryID', 'CategoryName', 'Description', 'Picture'].forEach(x => (<any>Fields)[x] = x);
+        ['CategoryID', 'CategoryName', 'Description', 'ParentCategoryID', 'Picture', 'ParentCategoryName'].forEach(x => (<any>Fields)[x] = x);
     }
 }
-

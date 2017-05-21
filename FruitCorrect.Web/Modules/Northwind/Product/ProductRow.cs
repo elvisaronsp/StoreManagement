@@ -194,6 +194,12 @@ namespace FruitCorrect.Northwind.Entities
             set { Fields.CategoryPicture[this] = value; }
         }
 
+        [DisplayName("Expiration Date"), NotNull]
+        public DateTime? ExpirationDate
+        {
+            get { return Fields.ExpirationDate[this]; }
+            set { Fields.ExpirationDate[this] = value; }
+        }
         IIdField IIdRow.IdField
         {
             get { return Fields.ProductID; }
@@ -224,6 +230,7 @@ namespace FruitCorrect.Northwind.Entities
             public Int16Field UnitsInStock;
             public Int16Field UnitsOnOrder;
             public Int16Field ReorderLevel;
+            public DateTimeField ExpirationDate;
 
             public StringField SupplierCompanyName;
             public StringField SupplierContactName;

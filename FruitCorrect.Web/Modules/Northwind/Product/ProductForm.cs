@@ -15,6 +15,8 @@ namespace FruitCorrect.Northwind.Forms
         public Boolean Discontinued { get; set; }
         public Int32 SupplierID { get; set; }
         public Int32 CategoryID { get; set; }
+
+        public DateTime ExpirationDate { get; set; }
         [Category("Pricing")]
         public String QuantityPerUnit { get; set; }
         public Decimal UnitPrice { get; set; }

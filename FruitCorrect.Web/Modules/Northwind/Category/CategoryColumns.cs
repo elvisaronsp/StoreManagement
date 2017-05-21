@@ -15,5 +15,8 @@ namespace FruitCorrect.Northwind.Forms
         public String CategoryName { get; set; }
         [Width(450)]
         public String Description { get; set; }
+
+        [EditLink, Width(300)]
+        public Int32 ParentCategoryName { get; set; }
     }
 }

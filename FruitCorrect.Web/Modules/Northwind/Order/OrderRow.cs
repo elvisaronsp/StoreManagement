@@ -56,12 +56,6 @@ namespace FruitCorrect.Northwind.Entities
             set { Fields.EmployeeGender[this] = (Int32?)value; }
         }
 
-        [Origin("e")]
-        public String EmployeeReportsToFullName
-        {
-            get { return Fields.EmployeeReportsToFullName[this]; }
-            set { Fields.EmployeeReportsToFullName[this] = value; }
-        }
 
         [DisplayName("Order Date"), NotNull]
         public DateTime? OrderDate
@@ -145,20 +139,6 @@ namespace FruitCorrect.Northwind.Entities
         {
             get { return Fields.ShipCountry[this]; }
             set { Fields.ShipCountry[this] = value; }
-        }
-
-        [Origin("c")]
-        public String CustomerContactName
-        {
-            get { return Fields.CustomerContactName[this]; }
-            set { Fields.CustomerContactName[this] = value; }
-        }
-
-        [Origin("c")]
-        public String CustomerContactTitle
-        {
-            get { return Fields.CustomerContactTitle[this]; }
-            set { Fields.CustomerContactTitle[this] = value; }
         }
 
         [Origin("c")]
@@ -252,8 +232,6 @@ namespace FruitCorrect.Northwind.Entities
             public StringField ShipCountry;
 
             public StringField CustomerCompanyName;
-            public StringField CustomerContactName;
-            public StringField CustomerContactTitle;
             public StringField CustomerCity;
             public StringField CustomerRegion;
             public StringField CustomerCountry;
@@ -262,7 +240,6 @@ namespace FruitCorrect.Northwind.Entities
 
             public StringField EmployeeFullName;
             public Int32Field EmployeeGender;
-            public StringField EmployeeReportsToFullName;
 
             public StringField ShipViaCompanyName;
             public StringField ShipViaPhone;
