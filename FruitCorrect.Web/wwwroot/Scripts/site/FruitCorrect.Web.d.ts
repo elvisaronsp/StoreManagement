@@ -1294,7 +1294,7 @@ declare namespace FruitCorrect.Northwind {
     interface CategoryForm {
         CategoryName: Serenity.StringEditor;
         Description: Serenity.StringEditor;
-        ParentCategoryId: Organization.BusinessUnitEditor;
+        ParentCategoryId: CategoryEditor;
     }
 }
 declare namespace FruitCorrect.Northwind {
@@ -1662,20 +1662,13 @@ declare namespace FruitCorrect.Northwind {
         TerritoryID?: string;
         EmployeeLastName?: string;
         EmployeeFirstName?: string;
-        EmployeeTitle?: string;
-        EmployeeTitleOfCourtesy?: string;
         EmployeeBirthDate?: string;
         EmployeeHireDate?: string;
         EmployeeAddress?: string;
         EmployeeCity?: string;
-        EmployeeRegion?: string;
-        EmployeePostalCode?: string;
         EmployeeCountry?: string;
-        EmployeeHomePhone?: string;
-        EmployeeExtension?: string;
         EmployeePhoto?: number[];
         EmployeeNotes?: string;
-        EmployeeReportsTo?: number;
         EmployeePhotoPath?: string;
         TerritoryTerritoryDescription?: string;
         TerritoryRegionID?: number;
@@ -1689,20 +1682,13 @@ declare namespace FruitCorrect.Northwind {
             const TerritoryID: string;
             const EmployeeLastName: string;
             const EmployeeFirstName: string;
-            const EmployeeTitle: string;
-            const EmployeeTitleOfCourtesy: string;
             const EmployeeBirthDate: string;
             const EmployeeHireDate: string;
             const EmployeeAddress: string;
             const EmployeeCity: string;
-            const EmployeeRegion: string;
-            const EmployeePostalCode: string;
             const EmployeeCountry: string;
-            const EmployeeHomePhone: string;
-            const EmployeeExtension: string;
             const EmployeePhoto: string;
             const EmployeeNotes: string;
-            const EmployeeReportsTo: string;
             const EmployeePhotoPath: string;
             const TerritoryTerritoryDescription: string;
             const TerritoryRegionID: string;
@@ -2181,6 +2167,140 @@ declare namespace FruitCorrect.Northwind {
         const baseUrl = "Northwind/SalesByCategory";
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<SalesByCategoryRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         namespace Methods {
+            const List: string;
+        }
+    }
+}
+declare namespace FruitCorrect.Northwind {
+    interface SavedScaleMasurementRow {
+        ScaleMasurementId?: number;
+        ScaleId?: number;
+        OrderId?: number;
+        ProductId?: number;
+        UserId?: number;
+        InsertedDate?: string;
+        PhisicalQuantity?: number;
+        ScaleName?: string;
+        OrderCustomerId?: string;
+        OrderEmployeeId?: number;
+        OrderOrderDate?: string;
+        OrderRequiredDate?: string;
+        OrderShippedDate?: string;
+        OrderShipVia?: number;
+        OrderFreight?: number;
+        OrderShipName?: string;
+        OrderShipAddress?: string;
+        OrderShipCity?: string;
+        OrderShipRegion?: string;
+        OrderShipPostalCode?: string;
+        OrderShipCountry?: string;
+        ProductProductName?: string;
+        ProductSupplierId?: number;
+        ProductCategoryId?: number;
+        ProductQuantityPerUnit?: string;
+        ProductUnitPrice?: number;
+        ProductUnitsInStock?: number;
+        ProductUnitsOnOrder?: number;
+        ProductReorderLevel?: number;
+        ProductDiscontinued?: boolean;
+        ProductProductImage?: string;
+        ProductExpirationDate?: string;
+    }
+    namespace SavedScaleMasurementRow {
+        const idProperty = "ScaleMasurementId";
+        const localTextPrefix = "Northwind.SavedScaleMasurement";
+        namespace Fields {
+            const ScaleMasurementId: string;
+            const ScaleId: string;
+            const OrderId: string;
+            const ProductId: string;
+            const UserId: string;
+            const InsertedDate: string;
+            const PhisicalQuantity: string;
+            const ScaleName: string;
+            const OrderCustomerId: string;
+            const OrderEmployeeId: string;
+            const OrderOrderDate: string;
+            const OrderRequiredDate: string;
+            const OrderShippedDate: string;
+            const OrderShipVia: string;
+            const OrderFreight: string;
+            const OrderShipName: string;
+            const OrderShipAddress: string;
+            const OrderShipCity: string;
+            const OrderShipRegion: string;
+            const OrderShipPostalCode: string;
+            const OrderShipCountry: string;
+            const ProductProductName: string;
+            const ProductSupplierId: string;
+            const ProductCategoryId: string;
+            const ProductQuantityPerUnit: string;
+            const ProductUnitPrice: string;
+            const ProductUnitsInStock: string;
+            const ProductUnitsOnOrder: string;
+            const ProductReorderLevel: string;
+            const ProductDiscontinued: string;
+            const ProductProductImage: string;
+            const ProductExpirationDate: string;
+        }
+    }
+}
+declare namespace FruitCorrect.Northwind {
+    namespace SavedScaleMasurementService {
+        const baseUrl = "Northwind/SavedScaleMasurement";
+        function Create(request: Serenity.SaveRequest<SavedScaleMasurementRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<SavedScaleMasurementRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<SavedScaleMasurementRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<SavedScaleMasurementRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
+declare namespace FruitCorrect.Northwind {
+}
+declare namespace FruitCorrect.Northwind {
+    class ScalesForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface ScalesForm {
+        ScaleID: Serenity.IntegerEditor;
+        Name: Serenity.StringEditor;
+    }
+}
+declare namespace FruitCorrect.Northwind {
+    interface ScalesRow {
+        ScaleId?: number;
+        Name?: string;
+    }
+    namespace ScalesRow {
+        const idProperty = "ScaleId";
+        const nameProperty = "Name";
+        const localTextPrefix = "Northwind.Scales";
+        namespace Fields {
+            const ScaleId: string;
+            const Name: string;
+        }
+    }
+}
+declare namespace FruitCorrect.Northwind {
+    namespace ScalesService {
+        const baseUrl = "Northwind/Scales";
+        function Create(request: Serenity.SaveRequest<ScalesRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<ScalesRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<ScalesRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<ScalesRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
             const List: string;
         }
     }
@@ -3371,6 +3491,38 @@ declare namespace FruitCorrect.Northwind {
 }
 declare namespace FruitCorrect.Northwind {
     class RegionGrid extends Serenity.EntityGrid<RegionRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): any;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace FruitCorrect.Northwind {
+    class SavedScaleMasurementGrid extends Serenity.EntityGrid<SavedScaleMasurementRow, any> {
+        protected getColumnsKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+        protected getButtons(): Serenity.ToolButton[];
+        private _scaleID;
+        scaleID: number;
+    }
+}
+declare namespace FruitCorrect.Northwind {
+    class ScalesDialog extends Serenity.EntityDialog<ScalesRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: ScalesForm;
+    }
+}
+declare namespace FruitCorrect.Northwind {
+    class ScalesGrid extends Serenity.EntityGrid<ScalesRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): any;
         protected getIdProperty(): string;

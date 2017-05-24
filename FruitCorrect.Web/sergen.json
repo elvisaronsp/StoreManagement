@@ -1,11 +1,29 @@
-﻿{
+{
   "RootNamespace": "FruitCorrect",
   "ServerTypings": {
     "Assemblies": [
       "bin/Debug/netcoreapp1.1/FruitCorrect.Web.dll"
     ]
   },
-  "Connections": [],
+  "Connections": [
+    {
+      "Key": "Northwind",
+      "Tables": [
+        {
+          "Tablename": "dbo.SavedScaleMasurement",
+          "Identifier": "SavedScaleMasurement",
+          "Module": "Northwind",
+          "PermissionKey": "Northwind:SavedScaleMasurement"
+        },
+        {
+          "Tablename": "dbo.Scales",
+          "Identifier": "Scales",
+          "Module": "Northwind",
+          "PermissionKey": "Northwind:Scales"
+        }
+      ]
+    }
+  ],
   "BaseRowClasses": [],
   "RemoveForeignFields": []
 }

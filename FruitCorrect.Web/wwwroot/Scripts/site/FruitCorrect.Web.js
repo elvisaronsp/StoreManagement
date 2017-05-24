@@ -892,7 +892,7 @@ var FruitCorrect;
         }(Serenity.PrefixedContext));
         CategoryForm.formKey = 'Northwind.Category';
         Northwind.CategoryForm = CategoryForm;
-        [['CategoryName', function () { return Serenity.StringEditor; }], ['Description', function () { return Serenity.StringEditor; }], ['ParentCategoryId', function () { return FruitCorrect.Organization.BusinessUnitEditor; }]].forEach(function (x) { return Object.defineProperty(CategoryForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+        [['CategoryName', function () { return Serenity.StringEditor; }], ['Description', function () { return Serenity.StringEditor; }], ['ParentCategoryId', function () { return Northwind.CategoryEditor; }]].forEach(function (x) { return Object.defineProperty(CategoryForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(Northwind = FruitCorrect.Northwind || (FruitCorrect.Northwind = {}));
 })(FruitCorrect || (FruitCorrect = {}));
 var FruitCorrect;
@@ -1164,7 +1164,7 @@ var FruitCorrect;
             var Fields;
             (function (Fields) {
             })(Fields = EmployeeTerritoryRow.Fields || (EmployeeTerritoryRow.Fields = {}));
-            ['EmployeeID', 'TerritoryID', 'EmployeeLastName', 'EmployeeFirstName', 'EmployeeTitle', 'EmployeeTitleOfCourtesy', 'EmployeeBirthDate', 'EmployeeHireDate', 'EmployeeAddress', 'EmployeeCity', 'EmployeeRegion', 'EmployeePostalCode', 'EmployeeCountry', 'EmployeeHomePhone', 'EmployeeExtension', 'EmployeePhoto', 'EmployeeNotes', 'EmployeeReportsTo', 'EmployeePhotoPath', 'TerritoryTerritoryDescription', 'TerritoryRegionID'].forEach(function (x) { return Fields[x] = x; });
+            ['EmployeeID', 'TerritoryID', 'EmployeeLastName', 'EmployeeFirstName', 'EmployeeBirthDate', 'EmployeeHireDate', 'EmployeeAddress', 'EmployeeCity', 'EmployeeCountry', 'EmployeePhoto', 'EmployeeNotes', 'EmployeePhotoPath', 'TerritoryTerritoryDescription', 'TerritoryRegionID'].forEach(function (x) { return Fields[x] = x; });
         })(EmployeeTerritoryRow = Northwind.EmployeeTerritoryRow || (Northwind.EmployeeTerritoryRow = {}));
     })(Northwind = FruitCorrect.Northwind || (FruitCorrect.Northwind = {}));
 })(FruitCorrect || (FruitCorrect = {}));
@@ -1496,6 +1496,87 @@ var FruitCorrect;
                 Methods[x] = SalesByCategoryService.baseUrl + '/' + x;
             });
         })(SalesByCategoryService = Northwind.SalesByCategoryService || (Northwind.SalesByCategoryService = {}));
+    })(Northwind = FruitCorrect.Northwind || (FruitCorrect.Northwind = {}));
+})(FruitCorrect || (FruitCorrect = {}));
+var FruitCorrect;
+(function (FruitCorrect) {
+    var Northwind;
+    (function (Northwind) {
+        var SavedScaleMasurementRow;
+        (function (SavedScaleMasurementRow) {
+            SavedScaleMasurementRow.idProperty = 'ScaleMasurementId';
+            SavedScaleMasurementRow.localTextPrefix = 'Northwind.SavedScaleMasurement';
+            var Fields;
+            (function (Fields) {
+            })(Fields = SavedScaleMasurementRow.Fields || (SavedScaleMasurementRow.Fields = {}));
+            ['ScaleMasurementId', 'ScaleId', 'OrderId', 'ProductId', 'UserId', 'InsertedDate', 'PhisicalQuantity', 'ScaleName', 'OrderCustomerId', 'OrderEmployeeId', 'OrderOrderDate', 'OrderRequiredDate', 'OrderShippedDate', 'OrderShipVia', 'OrderFreight', 'OrderShipName', 'OrderShipAddress', 'OrderShipCity', 'OrderShipRegion', 'OrderShipPostalCode', 'OrderShipCountry', 'ProductProductName', 'ProductSupplierId', 'ProductCategoryId', 'ProductQuantityPerUnit', 'ProductUnitPrice', 'ProductUnitsInStock', 'ProductUnitsOnOrder', 'ProductReorderLevel', 'ProductDiscontinued', 'ProductProductImage', 'ProductExpirationDate'].forEach(function (x) { return Fields[x] = x; });
+        })(SavedScaleMasurementRow = Northwind.SavedScaleMasurementRow || (Northwind.SavedScaleMasurementRow = {}));
+    })(Northwind = FruitCorrect.Northwind || (FruitCorrect.Northwind = {}));
+})(FruitCorrect || (FruitCorrect = {}));
+var FruitCorrect;
+(function (FruitCorrect) {
+    var Northwind;
+    (function (Northwind) {
+        var SavedScaleMasurementService;
+        (function (SavedScaleMasurementService) {
+            SavedScaleMasurementService.baseUrl = 'Northwind/SavedScaleMasurement';
+            var Methods;
+            (function (Methods) {
+            })(Methods = SavedScaleMasurementService.Methods || (SavedScaleMasurementService.Methods = {}));
+            ['Create', 'Update', 'Delete', 'Retrieve', 'List'].forEach(function (x) {
+                SavedScaleMasurementService[x] = function (r, s, o) { return Q.serviceRequest(SavedScaleMasurementService.baseUrl + '/' + x, r, s, o); };
+                Methods[x] = SavedScaleMasurementService.baseUrl + '/' + x;
+            });
+        })(SavedScaleMasurementService = Northwind.SavedScaleMasurementService || (Northwind.SavedScaleMasurementService = {}));
+    })(Northwind = FruitCorrect.Northwind || (FruitCorrect.Northwind = {}));
+})(FruitCorrect || (FruitCorrect = {}));
+var FruitCorrect;
+(function (FruitCorrect) {
+    var Northwind;
+    (function (Northwind) {
+        var ScalesForm = (function (_super) {
+            __extends(ScalesForm, _super);
+            function ScalesForm() {
+                return _super !== null && _super.apply(this, arguments) || this;
+            }
+            return ScalesForm;
+        }(Serenity.PrefixedContext));
+        ScalesForm.formKey = 'Northwind.Scales';
+        Northwind.ScalesForm = ScalesForm;
+        [['ScaleID', function () { return Serenity.IntegerEditor; }], ['Name', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(ScalesForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+    })(Northwind = FruitCorrect.Northwind || (FruitCorrect.Northwind = {}));
+})(FruitCorrect || (FruitCorrect = {}));
+var FruitCorrect;
+(function (FruitCorrect) {
+    var Northwind;
+    (function (Northwind) {
+        var ScalesRow;
+        (function (ScalesRow) {
+            ScalesRow.idProperty = 'ScaleId';
+            ScalesRow.nameProperty = 'Name';
+            ScalesRow.localTextPrefix = 'Northwind.Scales';
+            var Fields;
+            (function (Fields) {
+            })(Fields = ScalesRow.Fields || (ScalesRow.Fields = {}));
+            ['ScaleId', 'Name'].forEach(function (x) { return Fields[x] = x; });
+        })(ScalesRow = Northwind.ScalesRow || (Northwind.ScalesRow = {}));
+    })(Northwind = FruitCorrect.Northwind || (FruitCorrect.Northwind = {}));
+})(FruitCorrect || (FruitCorrect = {}));
+var FruitCorrect;
+(function (FruitCorrect) {
+    var Northwind;
+    (function (Northwind) {
+        var ScalesService;
+        (function (ScalesService) {
+            ScalesService.baseUrl = 'Northwind/Scales';
+            var Methods;
+            (function (Methods) {
+            })(Methods = ScalesService.Methods || (ScalesService.Methods = {}));
+            ['Create', 'Update', 'Delete', 'Retrieve', 'List'].forEach(function (x) {
+                ScalesService[x] = function (r, s, o) { return Q.serviceRequest(ScalesService.baseUrl + '/' + x, r, s, o); };
+                Methods[x] = ScalesService.baseUrl + '/' + x;
+            });
+        })(ScalesService = Northwind.ScalesService || (Northwind.ScalesService = {}));
     })(Northwind = FruitCorrect.Northwind || (FruitCorrect.Northwind = {}));
 })(FruitCorrect || (FruitCorrect = {}));
 var FruitCorrect;
@@ -5570,6 +5651,96 @@ var FruitCorrect;
             Serenity.Decorators.registerClass()
         ], RegionGrid);
         Northwind.RegionGrid = RegionGrid;
+    })(Northwind = FruitCorrect.Northwind || (FruitCorrect.Northwind = {}));
+})(FruitCorrect || (FruitCorrect = {}));
+/// <reference types="jqueryui" />
+var FruitCorrect;
+(function (FruitCorrect) {
+    var Northwind;
+    (function (Northwind) {
+        var SavedScaleMasurementGrid = (function (_super) {
+            __extends(SavedScaleMasurementGrid, _super);
+            function SavedScaleMasurementGrid(container) {
+                var _this = _super.call(this, container) || this;
+                _this.scaleID = $("#GridDiv").data("scaleid");
+                console.log($("#GridDiv").data("scaleid"));
+                return _this;
+            }
+            SavedScaleMasurementGrid.prototype.getColumnsKey = function () { return "Northwind.SavedScaleMasurement"; };
+            SavedScaleMasurementGrid.prototype.getIdProperty = function () { return Northwind.SavedScaleMasurementRow.idProperty; };
+            SavedScaleMasurementGrid.prototype.getLocalTextPrefix = function () { return Northwind.SavedScaleMasurementRow.localTextPrefix; };
+            SavedScaleMasurementGrid.prototype.getService = function () { return Northwind.SavedScaleMasurementService.baseUrl; };
+            SavedScaleMasurementGrid.prototype.getButtons = function () {
+                var buttons = _super.prototype.getButtons.call(this);
+                buttons.splice(Q.indexOf(buttons, function (x) { return x.cssClass == "add-button"; }), 1);
+                return buttons;
+            };
+            Object.defineProperty(SavedScaleMasurementGrid.prototype, "scaleID", {
+                get: function () {
+                    return this._scaleID;
+                },
+                set: function (value) {
+                    if (this._scaleID !== value) {
+                        this._scaleID = value;
+                        this.setEquality('ScaleID', value);
+                        this.refresh();
+                    }
+                },
+                enumerable: true,
+                configurable: true
+            });
+            return SavedScaleMasurementGrid;
+        }(Serenity.EntityGrid));
+        SavedScaleMasurementGrid = __decorate([
+            Serenity.Decorators.registerClass()
+        ], SavedScaleMasurementGrid);
+        Northwind.SavedScaleMasurementGrid = SavedScaleMasurementGrid;
+    })(Northwind = FruitCorrect.Northwind || (FruitCorrect.Northwind = {}));
+})(FruitCorrect || (FruitCorrect = {}));
+var FruitCorrect;
+(function (FruitCorrect) {
+    var Northwind;
+    (function (Northwind) {
+        var ScalesDialog = (function (_super) {
+            __extends(ScalesDialog, _super);
+            function ScalesDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new Northwind.ScalesForm(_this.idPrefix);
+                return _this;
+            }
+            ScalesDialog.prototype.getFormKey = function () { return Northwind.ScalesForm.formKey; };
+            ScalesDialog.prototype.getIdProperty = function () { return Northwind.ScalesRow.idProperty; };
+            ScalesDialog.prototype.getLocalTextPrefix = function () { return Northwind.ScalesRow.localTextPrefix; };
+            ScalesDialog.prototype.getNameProperty = function () { return Northwind.ScalesRow.nameProperty; };
+            ScalesDialog.prototype.getService = function () { return Northwind.ScalesService.baseUrl; };
+            return ScalesDialog;
+        }(Serenity.EntityDialog));
+        ScalesDialog = __decorate([
+            Serenity.Decorators.registerClass()
+        ], ScalesDialog);
+        Northwind.ScalesDialog = ScalesDialog;
+    })(Northwind = FruitCorrect.Northwind || (FruitCorrect.Northwind = {}));
+})(FruitCorrect || (FruitCorrect = {}));
+var FruitCorrect;
+(function (FruitCorrect) {
+    var Northwind;
+    (function (Northwind) {
+        var ScalesGrid = (function (_super) {
+            __extends(ScalesGrid, _super);
+            function ScalesGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            ScalesGrid.prototype.getColumnsKey = function () { return "Northwind.Scales"; };
+            ScalesGrid.prototype.getDialogType = function () { return Northwind.ScalesDialog; };
+            ScalesGrid.prototype.getIdProperty = function () { return Northwind.ScalesRow.idProperty; };
+            ScalesGrid.prototype.getLocalTextPrefix = function () { return Northwind.ScalesRow.localTextPrefix; };
+            ScalesGrid.prototype.getService = function () { return Northwind.ScalesService.baseUrl; };
+            return ScalesGrid;
+        }(Serenity.EntityGrid));
+        ScalesGrid = __decorate([
+            Serenity.Decorators.registerClass()
+        ], ScalesGrid);
+        Northwind.ScalesGrid = ScalesGrid;
     })(Northwind = FruitCorrect.Northwind || (FruitCorrect.Northwind = {}));
 })(FruitCorrect || (FruitCorrect = {}));
 var FruitCorrect;

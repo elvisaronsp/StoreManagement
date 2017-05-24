@@ -13,10 +13,10 @@ namespace FruitCorrect.Northwind.Forms
         [Width(100)]
         public Decimal UnitPrice { get; set; }
         [Width(100)]
-        public Int16 Quantity { get; set; }
+        public Decimal Quantity { get; set; }
 
         [Width(100)]
-        public Int16 PhisicalQuantity { get; set; }
+        public Decimal PhisicalQuantity { get; set; }
 
         [Width(100)]
         public Double Discount { get; set; }

@@ -230,7 +230,7 @@ namespace FruitCorrect.Northwind.Entities
             public StringField ShipRegion;
             public StringField ShipPostalCode;
             public StringField ShipCountry;
-
+            
             public StringField CustomerCompanyName;
             public StringField CustomerCity;
             public StringField CustomerRegion;

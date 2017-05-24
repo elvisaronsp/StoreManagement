@@ -8896,3 +8896,15 @@ section.content > .s-DataGrid {
 .inline-action.add-child-unit {
   background-image: url(../serenity/images/node-insert-next.png);
 }
+.s-Northwind-ScalesDialog > .size {
+  width: 650px;
+}
+.s-Northwind-ScalesDialog .caption {
+  width: 150px;
+}
+.s-Northwind-ScalesDialog > .size {
+  width: 650px;
+}
+.s-Northwind-ScalesDialog .caption {
+  width: 150px;
+}

@@ -158,6 +158,16 @@ namespace MVC
                 public const string RegionIndex = "~/Modules/Northwind/Region/RegionIndex.cshtml";
             }
 
+            public static class SavedScaleMasurement
+            {
+                public const string SavedScaleMasurementIndex = "~/Modules/Northwind/SavedScaleMasurement/SavedScaleMasurementIndex.cshtml";
+            }
+
+            public static class Scales
+            {
+                public const string ScalesIndex = "~/Modules/Northwind/Scales/ScalesIndex.cshtml";
+            }
+
             public static class Shipper
             {
                 public const string ShipperIndex = "~/Modules/Northwind/Shipper/ShipperIndex.cshtml";

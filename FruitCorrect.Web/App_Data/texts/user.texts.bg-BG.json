@@ -7,6 +7,8 @@
   "Controls.EntityDialog.UpdateButton": "Обнови",
   "Controls.EntityGrid.IncludeDeletedToggle": "покажи неактивните записи",
   "Controls.EntityGrid.NewButton": "Нов {0}",
+  "Controls.FilterPanel.OperatorFormats.contains": "{0} съдържа '{1}'",
+  "Controls.FilterPanel.OperatorNames.contains": "съдържа",
   "Controls.ImageUpload.DeleteButtonHint": "Изтрии",
   "Controls.PropertyGrid.DefaultCategory": "Свойства",
   "Controls.SelectEditor.ClickToDefine": "*** Кликни за нов ***",

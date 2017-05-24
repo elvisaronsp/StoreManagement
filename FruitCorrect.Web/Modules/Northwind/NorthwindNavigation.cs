@@ -3,7 +3,7 @@ using Northwind = FruitCorrect.Northwind.Pages;
 
 //[assembly: NavigationMenu(7000, "Northwind", icon: "icon-anchor")]
 
-[assembly: NavigationLink(7000, "Scales", typeof(Northwind.EmployeeController), icon: "fa-balance-scale")]
+//[assembly: NavigationLink(7000, "Scales", typeof(Northwind.EmployeeController), icon: "fa-balance-scale")]
 
 [assembly: NavigationLink(7050, "Employees", typeof(Northwind.EmployeeController), icon: "fa-users")]
 
