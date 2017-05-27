@@ -27,7 +27,7 @@ public class DynamicNavigation : INavigationItemSource
                 items.Add(new NavigationLinkAttribute(7970,
                     
                     path: "Кантари/" + scale.Name.Replace("/", "//"),
-                    url: "~/Northwind/Scale?id=" + scale.ScaleId,
+                    url: "~/ScaleMeasurement?id=" + scale.ScaleId,
                     permission: "Northwind:Scales",
                     icon: "icon-folder-alt"));
         }

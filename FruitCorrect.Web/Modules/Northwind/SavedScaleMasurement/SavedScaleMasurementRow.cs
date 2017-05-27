@@ -28,7 +28,7 @@ namespace FruitCorrect.Northwind.Entities
             set { Fields.ScaleId[this] = value; }
         }
 
-        [DisplayName("Order"), Column("OrderID"), NotNull, ForeignKey("[dbo].[Orders]", "OrderID"), LeftJoin("jOrder"), TextualField("OrderCustomerId")]
+        [DisplayName("Order"), Column("OrderID"), NotNull, ForeignKey("[dbo].[Orders]", "OrderID"), LeftJoin("jOrder"), TextualField("OrderCustomerName")]
         public Int32? OrderId
         {
             get { return Fields.OrderId[this]; }
@@ -70,13 +70,19 @@ namespace FruitCorrect.Northwind.Entities
             set { Fields.ScaleName[this] = value; }
         }
 
-        [DisplayName("Order Customer Id"), Expression("jOrder.[CustomerID]")]
+        [DisplayName("Order Customer Id"), Expression("jOrder.[CustomerID]"), ForeignKey("[dbo].[Customers]", "CustomerId"), LeftJoin("jCustomer")]
         public String OrderCustomerId
         {
             get { return Fields.OrderCustomerId[this]; }
             set { Fields.OrderCustomerId[this] = value; }
         }
 
+        [DisplayName("Company Name"), Column("CompanyName"),NotNull, Expression("jCustomer.[CompanyName]")]
+        public String CustomerCompanyName
+        {
+            get { return Fields.CustomerCompanyName[this]; }
+            set { Fields.CustomerCompanyName[this] = value; }
+        }
         [DisplayName("Order Employee Id"), Expression("jOrder.[EmployeeID]")]
         public Int32? OrderEmployeeId
         {
@@ -287,6 +293,8 @@ namespace FruitCorrect.Northwind.Entities
             public BooleanField ProductDiscontinued;
             public StringField ProductProductImage;
             public DateTimeField ProductExpirationDate;
+
+            public StringField CustomerCompanyName;
 
             public RowFields()
                 : base()

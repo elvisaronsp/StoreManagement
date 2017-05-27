@@ -12,7 +12,8 @@ namespace FruitCorrect.Northwind.Columns
     {
         public String ScaleName { get; set; }
 
-        public String OrderCustomerId { get; set; }
+        public String CustomerCompanyName { get; set; }
+
         public Int32 OrderId { get; set; }
 
 

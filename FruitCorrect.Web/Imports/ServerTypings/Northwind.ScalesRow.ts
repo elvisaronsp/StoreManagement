@@ -2,6 +2,8 @@
     export interface ScalesRow {
         ScaleId?: number;
         Name?: string;
+        Url?: string;
+        PortName?: string;
     }
 
     export namespace ScalesRow {
@@ -12,8 +14,10 @@
         export namespace Fields {
             export declare const ScaleId: string;
             export declare const Name: string;
+            export declare const Url: string;
+            export declare const PortName: string;
         }
 
-        ['ScaleId', 'Name'].forEach(x => (<any>Fields)[x] = x);
+        ['ScaleId', 'Name', 'Url', 'PortName'].forEach(x => (<any>Fields)[x] = x);
     }
 }

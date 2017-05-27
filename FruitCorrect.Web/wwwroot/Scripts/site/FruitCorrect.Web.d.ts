@@ -1737,8 +1737,7 @@ declare namespace FruitCorrect.Northwind {
     interface OrderDetailForm {
         ProductID: Serenity.LookupEditor;
         UnitPrice: Serenity.DecimalEditor;
-        Quantity: Serenity.IntegerEditor;
-        PhisicalQuantity: Serenity.IntegerEditor;
+        Quantity: Serenity.DecimalEditor;
         Discount: Serenity.DecimalEditor;
     }
 }
@@ -2172,6 +2171,8 @@ declare namespace FruitCorrect.Northwind {
     }
 }
 declare namespace FruitCorrect.Northwind {
+}
+declare namespace FruitCorrect.Northwind {
     interface SavedScaleMasurementRow {
         ScaleMasurementId?: number;
         ScaleId?: number;
@@ -2269,14 +2270,17 @@ declare namespace FruitCorrect.Northwind {
         static formKey: string;
     }
     interface ScalesForm {
-        ScaleID: Serenity.IntegerEditor;
         Name: Serenity.StringEditor;
+        Url: Serenity.StringEditor;
+        PortName: Serenity.StringEditor;
     }
 }
 declare namespace FruitCorrect.Northwind {
     interface ScalesRow {
         ScaleId?: number;
         Name?: string;
+        Url?: string;
+        PortName?: string;
     }
     namespace ScalesRow {
         const idProperty = "ScaleId";
@@ -2285,6 +2289,8 @@ declare namespace FruitCorrect.Northwind {
         namespace Fields {
             const ScaleId: string;
             const Name: string;
+            const Url: string;
+            const PortName: string;
         }
     }
 }

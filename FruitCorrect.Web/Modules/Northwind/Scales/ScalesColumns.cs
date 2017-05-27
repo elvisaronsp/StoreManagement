@@ -17,5 +17,8 @@ namespace FruitCorrect.Northwind.Columns
         public Int32 ScaleId { get; set; }
         [EditLink]
         public String Name { get; set; }
+
+        public String Url { get; set; }
+        public String PortName { get; set; }
     }
 }

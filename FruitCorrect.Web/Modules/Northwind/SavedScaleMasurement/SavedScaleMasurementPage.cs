@@ -1,5 +1,7 @@
 ﻿
 using System;
+using System.Net;
+using System.Threading.Tasks;
 using FruitCorrect.Migrations.NorthwindDB;
 using FruitCorrect.Northwind.Entities;
 using Microsoft.AspNetCore.Authorization;
@@ -16,10 +18,17 @@ namespace FruitCorrect.Northwind.Pages
     {
         
 
-        [Route("Northwind/Scale")]
-        public ActionResult Scale(int id)
+        [Route("ScaleMeasurement")]
+        public async Task<IActionResult> Scale(int id)
         {
-            ViewBag.Scale = $"{id}";
+            var connection = SqlConnections.NewFor<Entities.ScalesRow>();
+            var model = connection.TryById<ScalesRow>(id);
+
+            if (!await TestPing(model.Url.TrimEnd('/') + "/signalr/hubs"))
+            {
+                if (ViewBag.NoConnection == null)
+                    ViewBag.NoConnection = "Connection with scale can not be established!";
+            }
             return View("~/Modules/Northwind/SavedScaleMasurement/SavedScaleMasurementIndex.cshtml");
         }
 
@@ -88,6 +97,45 @@ namespace FruitCorrect.Northwind.Pages
             public int StopBits { get; set; }
 
 
+        }
+
+        private async Task<bool> TestPing(string url)
+        {
+            try
+            {
+                HttpWebRequest request = HttpWebRequest.Create(url) as HttpWebRequest;
+                request.ContinueTimeout = 5000; //set the timeout to 5 seconds to keep the user from waiting too long for the page to load
+                request.Method = "GET"; //Get only the header information -- no need to download any content
+
+                HttpWebResponse response = (HttpWebResponse)(await request.GetResponseAsync());
+
+                int statusCode = (int)response.StatusCode;
+                if (statusCode >= 100 && statusCode < 400) //Good requests
+                {
+                    return true;
+                }
+                else if (statusCode >= 500 && statusCode <= 510) //Server Errors
+                {
+                    ViewBag.NoConnection = String.Format("The remote server has thrown an internal error. Url is not valid: {0}", url);
+                    return false;
+                }
+            }
+            catch (WebException ex)
+            {
+                if (ex.Status == WebExceptionStatus.ProtocolError) //400 errors
+                {
+                    return false;
+                }
+                else
+                {
+                    ViewBag.NoConnection = String.Format("Unhandled status [{0}] returned for url: {1}", ex.Status, url);
+                }
+            }
+            catch (Exception ex)
+            {
+                ViewBag.NoConnection = String.Format("Could not test url {0}.", url);
+            }
+            return false;
         }
     }
 }

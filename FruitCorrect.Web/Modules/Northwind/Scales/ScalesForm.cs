@@ -8,7 +8,9 @@ namespace FruitCorrect.Northwind.Forms
     [BasedOnRow(typeof(Entities.ScalesRow))]
     public class ScalesForm
     {
-        public Int32? ScaleID { get; set; }
         public String Name { get; set; }
+
+        public String Url { get; set; }
+        public String PortName { get; set; }
     }
 }

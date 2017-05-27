@@ -28,6 +28,20 @@ namespace FruitCorrect.Northwind.Entities
             set { Fields.Name[this] = value; }
         }
 
+        [DisplayName("Url"), Size(50), QuickSearch]
+        public String Url
+        {
+            get { return Fields.Url[this]; }
+            set { Fields.Url[this] = value; }
+        }
+
+        [DisplayName("PortName"), Size(50), QuickSearch]
+        public String PortName
+        {
+            get { return Fields.PortName[this]; }
+            set { Fields.PortName[this] = value; }
+        }
+
         IIdField IIdRow.IdField
         {
             get { return Fields.ScaleId; }
@@ -49,6 +63,8 @@ namespace FruitCorrect.Northwind.Entities
         {
             public Int32Field ScaleId;
             public StringField Name;
+            public StringField Url;
+            public StringField PortName;
 
             public RowFields()
                 : base()
